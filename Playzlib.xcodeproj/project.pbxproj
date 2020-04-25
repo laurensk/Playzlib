@@ -154,6 +154,7 @@
 		0D67ECAB245328F1003D8F43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D845E132454DAA500E23A76 /* HelperViews */,
 				0D2C5F18245497FB00141ADF /* Settings */,
 				0D67ECAE24532905003D8F43 /* Playzlib */,
 				0D67ECAD245328FF003D8F43 /* MyPlayz */,
@@ -176,7 +177,6 @@
 			children = (
 				0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */,
 				0D67ECB924532F01003D8F43 /* PlayzView.swift */,
-				0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */,
 				0DDA6764245214620088B659 /* ContentView.swift */,
 			);
 			path = MyPlayz;
@@ -188,6 +188,14 @@
 				0D67ECB7245329FF003D8F43 /* PlayzlibView.swift */,
 			);
 			path = Playzlib;
+			sourceTree = "<group>";
+		};
+		0D845E132454DAA500E23A76 /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */,
+			);
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 		0DC403102454442500C58CB2 /* Development Assets */ = {

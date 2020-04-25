@@ -15,9 +15,9 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     var soundPlaying: Binding<Bool> = .constant(false)
     var playzPlayer: AVAudioPlayer = AVAudioPlayer()
     
-//    override init() {
-//        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-//    }
+    override init() {
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+    }
     
     func playSound(playz: Playz) {
         if let path = Bundle.main.path(forResource: playz.audioName, ofType: nil) {

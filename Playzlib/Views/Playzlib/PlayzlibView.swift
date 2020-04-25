@@ -9,14 +9,33 @@
 import SwiftUI
 
 struct PlayzlibView: View {
+    
+    @State private var showSettings = false
+    @State private var searchText = ""
+    
+    var showSettingsButton: some View {
+        Button(action: {
+            self.showSettings.toggle()
+        }) {
+            Image(systemName: "gear").imageScale(.large)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("Idk if we can make that...")
+                SearchBarView(searchText: $searchText).padding(EdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5))
+                Spacer()
+                VStack {
+                    Text("We're working\non the Playzlib.").fontWeight(.semibold).multilineTextAlignment(.center)
                 }
+                Spacer()
             }.navigationBarTitle("Playzlib")
+                .navigationBarItems(leading: showSettingsButton)
         }.navigationViewStyle(StackNavigationViewStyle())
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+        }
     }
 }
 

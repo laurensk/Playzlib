@@ -35,9 +35,11 @@ struct MyPlayzView: View {
     var body: some View {
         NavigationView {
             VStack {
-                //SearchBarView(searchText: $searchText)
+                SearchBarView(searchText: $searchText).padding(EdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5))
                 List {
-                    ForEach(demoPlayz, id: \.self) { playz in
+                    ForEach(demoPlayz.filter {
+                        self.searchText.isEmpty ? true : $0.name.contains(self.searchText)
+                    }, id: \.self) { playz in
                         PlayzView(playz: playz).padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
                 }
@@ -62,6 +64,6 @@ struct MyPlayzView: View {
 
 struct MyPlayzView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPlayzView()
+        MyPlayzView().environment(\.colorScheme, .dark)
     }
 }

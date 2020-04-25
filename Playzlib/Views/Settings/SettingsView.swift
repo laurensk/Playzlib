@@ -30,7 +30,7 @@ struct SettingsView: View {
                         List {
                             VStack {
                                 Toggle(isOn: $settings.allowSimultaneouslyPlays) {
-                                    Text("Allow simultaneously plays")
+                                    Text("Allow simultaneous plays")
                                 }
                             }
                         }
