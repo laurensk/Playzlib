@@ -1,0 +1,29 @@
+//
+//  Settings.swift
+//  Playzlib
+//
+//  Created by Laurens on 25.04.20.
+//  Copyright © 2020 Laurens. All rights reserved.
+//
+
+import Foundation
+
+enum SettingProperties: String {
+    case AllowSimultaneouslyPlays = "allowSimultaneouslyPlays"
+}
+
+public class Settings {
+    
+    static func getSetting(setting: String) -> Bool {
+        let defaults = UserDefaults.standard
+        return defaults.bool(forKey: "\(setting)")
+        
+    }
+    
+    static func setSetting(setting: String, value: Bool) -> Bool {
+        let defaults = UserDefaults.standard
+        defaults.set(value, forKey: "\(setting)")
+        return true
+    }
+    
+}
