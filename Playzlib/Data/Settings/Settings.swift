@@ -14,16 +14,15 @@ enum SettingProperties: String {
 
 public class Settings {
     
-    static func getSetting(setting: String) -> Bool {
+    static func getSetting(setting: SettingProperties) -> Bool {
         let defaults = UserDefaults.standard
         return defaults.bool(forKey: "\(setting)")
         
     }
     
-    static func setSetting(setting: String, value: Bool) -> Bool {
+    static func setSetting(setting: SettingProperties, value: Bool) {
         let defaults = UserDefaults.standard
         defaults.set(value, forKey: "\(setting)")
-        return true
     }
     
 }

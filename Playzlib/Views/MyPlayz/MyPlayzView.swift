@@ -7,11 +7,15 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MyPlayzView: View {
     
-    init() {
-        setupUI()
+    @State private var showSettings = false
+    @State private var searchText = ""
+    
+    let navigateToOldView: some View = NavigationLink(destination: ContentView()) {
+        Image(systemName: "arrow.left.circle.fill").imageScale(.large)
     }
     
     let addPlayzButton: some View = Button(action: {
@@ -20,21 +24,31 @@ struct MyPlayzView: View {
         Image(systemName: "plus").imageScale(.large)
     }
     
-    let navigateToOldView: some View = NavigationLink(destination: ContentView()) {
-        Image(systemName: "arrow.left.circle.fill").imageScale(.large)
+    var showSettingsButton: some View {
+        Button(action: {
+            self.showSettings.toggle()
+        }) {
+            Image(systemName: "gear").imageScale(.large)
+        }
     }
     
     var body: some View {
         NavigationView {
             VStack {
+                //SearchBarView(searchText: $searchText)
                 List {
                     ForEach(demoPlayz, id: \.self) { playz in
                         PlayzView(playz: playz).padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
                 }
             }.navigationBarTitle("My Playz")
-                .navigationBarItems(trailing: addPlayzButton)
+                .navigationBarItems(leading: showSettingsButton, trailing: addPlayzButton)
         }.navigationViewStyle(StackNavigationViewStyle())
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
+        }.onAppear {
+            self.setupUI()
+        }
     }
     
     func setupUI() {

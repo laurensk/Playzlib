@@ -12,19 +12,12 @@ import SwiftUI
 
 class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
-    var audioPlayers: [AVAudioPlayer] = []
-    
     var soundPlaying: Binding<Bool> = .constant(false)
-    
     var playzPlayer: AVAudioPlayer = AVAudioPlayer()
     
-    override init() {
-        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-    }
-    
-    func addAudioPlayer() {
-        
-    }
+//    override init() {
+//        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+//    }
     
     func playSound(playz: Playz) {
         if let path = Bundle.main.path(forResource: playz.audioName, ofType: nil) {
@@ -45,10 +38,6 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func stop(playz: Playz) {
         playzPlayer.stop()
         soundPlaying.wrappedValue = false
-    }
-    
-    func stopAll() {
-        
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

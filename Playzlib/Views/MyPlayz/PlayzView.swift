@@ -42,6 +42,11 @@ struct PlayzView: View {
                     }
                 }
             }
+        }.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("stopAudio"))) { _ in
+            self.checkForSimultaneouslyPlays()
+        }.onAppear {
+            self.soundPlaying = false
+            self.stopPlayingPlayz()
         }
     }
     
@@ -50,11 +55,30 @@ struct PlayzView: View {
         playzPlayer.soundPlaying = $soundPlaying
         
         if soundPlaying {
-            self.playzPlayer.stop(playz: playz)
+            stopPlayingPlayz()
         } else {
-            self.playzPlayer.playSound(playz: playz)
+            playPlayz()
         }
+    }
+    
+    func checkForSimultaneouslyPlays() {
         
+        if !Settings.getSetting(setting: .AllowSimultaneouslyPlays) {
+            stopPlayingPlayz()
+        }
+    }
+    
+    func playPlayz() {
+        
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name("stopAudio"), object: nil)
+        
+        self.playzPlayer.playSound(playz: playz)
+    }
+    
+    func stopPlayingPlayz() {
+        
+        self.playzPlayer.stop(playz: self.playz)
     }
     
 }
