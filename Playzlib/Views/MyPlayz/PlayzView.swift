@@ -23,8 +23,8 @@ struct PlayzView: View {
             VStack {
                 HStack() {
                     VStack(alignment: .leading) {
-                        Text(playz.name).font(.headline).foregroundColor(Color("textColor")).padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
-                        Text("Last played: \(playz.lastPlayed)").font(.caption).foregroundColor(Color.gray)
+                        Text(playz.name ?? "Untitled").font(.headline).foregroundColor(Color("textColor")).padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
+                        Text("Last played: Today").font(.caption).foregroundColor(Color.gray)
                     }
                     Spacer()
                 }.padding(.leading)
@@ -78,10 +78,4 @@ struct PlayzView: View {
         self.playzPlayer.stop(playz: self.playz)
     }
     
-}
-
-struct PlayzView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayzView(playz: Playz(uuid: UUID(), name: "Leave the class. Leave!", audioName: "klasseraus.mp3", lastPlayed: "Today", creationDate: "Today"))
-    }
 }
