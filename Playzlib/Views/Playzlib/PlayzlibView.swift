@@ -24,18 +24,30 @@ struct PlayzlibView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(searchText: $searchText).padding(EdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5))
-                Spacer()
-                VStack {
-                    Text("We're working\non the Playzlib.").fontWeight(.semibold).multilineTextAlignment(.center)
+                List {
+                    SearchBarView(searchText: $searchText).padding(.top, 10)
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Text("We're working\non the Playzlib").fontWeight(.semibold).multilineTextAlignment(.center)
+                        Spacer()
+                    }
                 }
-                Spacer()
             }.navigationBarTitle("Playzlib")
                 .navigationBarItems(leading: showSettingsButton)
         }.navigationViewStyle(StackNavigationViewStyle())
             .sheet(isPresented: $showSettings) {
                 SettingsView()
+        }.onAppear {
+            self.setupUI()
         }
+    }
+    
+    func setupUI() {
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+        UITableView.appearance().allowsSelection = false
+        UITableViewCell.appearance().selectionStyle = .none
     }
 }
 

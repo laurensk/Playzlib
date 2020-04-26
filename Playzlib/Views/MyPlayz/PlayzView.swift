@@ -44,9 +44,6 @@ struct PlayzView: View {
             }
         }.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("stopAudio"))) { _ in
             self.checkForSimultaneouslyPlays()
-        }.onAppear {
-            self.soundPlaying = false
-            self.stopPlayingPlayz()
         }
     }
     

@@ -35,8 +35,8 @@ struct MyPlayzView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(searchText: $searchText).padding(EdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5))
                 List {
+                    SearchBarView(searchText: $searchText).padding(.top, 10)
                     ForEach(demoPlayz.filter {
                         self.searchText.isEmpty ? true : $0.name.contains(self.searchText)
                     }, id: \.self) { playz in

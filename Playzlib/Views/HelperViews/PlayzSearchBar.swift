@@ -76,7 +76,6 @@ struct SearchBarView: View {
                 .foregroundColor(Color(.systemBlue))
             }
         }
-        .padding(.horizontal)
         .navigationBarHidden(showCancelButton)
     }
 }
