@@ -20,19 +20,18 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     }
     
     func playSound(playz: Playz) {
-        if let path = Bundle.main.path(forResource: playz.audioName, ofType: nil) {
-            do {
-                playzPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-                playzPlayer.delegate = self
-                soundPlaying.wrappedValue = true
-                playzPlayer.play()
-            } catch {
-                soundPlaying.wrappedValue = false
-                print("couldn't play.. sorry!")
-            }
+        do {
+            playzPlayer = try AVAudioPlayer(contentsOf: URL(resolvingAliasFileAt: playz.audioUrl!))
+            playzPlayer.delegate = self
+            soundPlaying.wrappedValue = true
+            playzPlayer.play()
+        } catch {
+            soundPlaying.wrappedValue = false
+            print("couldn't play.. sorry!")
         }
         
-
+        
+        
     }
     
     func stop(playz: Playz) {

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0E6B7124562D4800F69140 /* PlaybackPlayz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */; };
+		0D0E6B732456B4A600F69140 /* applogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E6B722456B4A600F69140 /* applogo.png */; };
+		0D0E6BC12456E66200F69140 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D0E6BB72456E66200F69140 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D0E6BCB2456EBE500F69140 /* CreatePlayzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */; };
+		0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */; };
+		0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BD42457328000F69140 /* CoreDataStack.swift */; };
+		0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */; };
 		0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F0D24547E9B00141ADF /* Playz.swift */; };
 		0D2C5F1024547F4500141ADF /* DemoPlayz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F0F24547F4500141ADF /* DemoPlayz.swift */; };
 		0D2C5F13245482D100141ADF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F12245482D100141ADF /* Settings.swift */; };
@@ -18,6 +25,8 @@
 		0D67ECB8245329FF003D8F43 /* PlayzlibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB7245329FF003D8F43 /* PlayzlibView.swift */; };
 		0D67ECBA24532F01003D8F43 /* PlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB924532F01003D8F43 /* PlayzView.swift */; };
 		0D846AC12454C74E009B7A7E /* PlayzSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */; };
+		0D97876324573F9C00E59AF3 /* Playz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */; };
+		0D97876424573F9E00E59AF3 /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
 		0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */; };
 		0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
 		0DC403122454443500C58CB2 /* klasseraus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DC403112454443500C58CB2 /* klasseraus.mp3 */; };
@@ -33,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0D0E6BBF2456E66200F69140 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DDA6752245214620088B659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0E6BB62456E66200F69140;
+			remoteInfo = ShareExtension;
+		};
 		0DDA6774245214650088B659 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DDA6752245214620088B659 /* Project object */;
@@ -49,7 +65,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0D0E6BC52456E66200F69140 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0D0E6BC12456E66200F69140 /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPlayz.swift; sourceTree = "<group>"; };
+		0D0E6B722456B4A600F69140 /* applogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applogo.png; sourceTree = "<group>"; };
+		0D0E6BB72456E66200F69140 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0E6BBE2456E66200F69140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayzViewController.swift; sourceTree = "<group>"; };
+		0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAudioTrack.swift; sourceTree = "<group>"; };
+		0D0E6BD42457328000F69140 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0D2C5F0D24547E9B00141ADF /* Playz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playz.swift; sourceTree = "<group>"; };
 		0D2C5F0F24547F4500141ADF /* DemoPlayz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPlayz.swift; sourceTree = "<group>"; };
 		0D2C5F12245482D100141ADF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -60,6 +97,8 @@
 		0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayzView.swift; sourceTree = "<group>"; };
 		0D67ECB7245329FF003D8F43 /* PlayzlibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzlibView.swift; sourceTree = "<group>"; };
 		0D67ECB924532F01003D8F43 /* PlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzView.swift; sourceTree = "<group>"; };
+		0D7CC58B245743BE00DE0E85 /* Playzlib.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playzlib.entitlements; sourceTree = "<group>"; };
+		0D7CC58C245743EE00DE0E85 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0D846ABE2454C6E1009B7A7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayzSearchBar.swift; sourceTree = "<group>"; };
 		0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playz+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -82,6 +121,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D0E6BB42456E66200F69140 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DDA6757245214620088B659 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +152,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0E6B6F24562D2700F69140 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		0D0E6B742456B4F600F69140 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E6B722456B4A600F69140 /* applogo.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0D0E6BB82456E66200F69140 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0D7CC58C245743EE00DE0E85 /* ShareExtension.entitlements */,
+				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
+				0D0E6BD42457328000F69140 /* CoreDataStack.swift */,
+				0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */,
+				0D0E6BBE2456E66200F69140 /* Info.plist */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
 		0D2C5F0B24547E4500141ADF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +224,7 @@
 		0D67ECAA245328EA003D8F43 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0D0E6B6F24562D2700F69140 /* Environment */,
 				0DB1DBC62455FD0D00A2470E /* Core Data */,
 				0D2C5F11245482C000141ADF /* Settings */,
 			);
@@ -227,6 +302,7 @@
 				0DDA675C245214620088B659 /* Playzlib */,
 				0DDA6776245214650088B659 /* PlayzlibTests */,
 				0DDA6781245214650088B659 /* PlayzlibUITests */,
+				0D0E6BB82456E66200F69140 /* ShareExtension */,
 				0DDA675B245214620088B659 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -237,6 +313,7 @@
 				0DDA675A245214620088B659 /* Playzlib.app */,
 				0DDA6773245214650088B659 /* PlayzlibTests.xctest */,
 				0DDA677E245214650088B659 /* PlayzlibUITests.xctest */,
+				0D0E6BB72456E66200F69140 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +321,7 @@
 		0DDA675C245214620088B659 /* Playzlib */ = {
 			isa = PBXGroup;
 			children = (
+				0D7CC58B245743BE00DE0E85 /* Playzlib.entitlements */,
 				0DDA675D245214620088B659 /* AppDelegate.swift */,
 				0DDA675F245214620088B659 /* SceneDelegate.swift */,
 				0D67ECAB245328F1003D8F43 /* Views */,
@@ -251,6 +329,7 @@
 				0D67ECA9245328E6003D8F43 /* Models */,
 				0D2C5F0B24547E4500141ADF /* Helpers */,
 				0DDA6766245214650088B659 /* Assets.xcassets */,
+				0D0E6B742456B4F600F69140 /* Assets */,
 				0DDA676B245214650088B659 /* LaunchScreen.storyboard */,
 				0D846ABE2454C6E1009B7A7E /* Info.plist */,
 				0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */,
@@ -280,6 +359,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D0E6BB62456E66200F69140 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0E6BC22456E66200F69140 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				0D0E6BB32456E66200F69140 /* Sources */,
+				0D0E6BB42456E66200F69140 /* Frameworks */,
+				0D0E6BB52456E66200F69140 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 0D0E6BB72456E66200F69140 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0DDA6759245214620088B659 /* Playzlib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DDA6787245214650088B659 /* Build configuration list for PBXNativeTarget "Playzlib" */;
@@ -287,10 +383,12 @@
 				0DDA6756245214620088B659 /* Sources */,
 				0DDA6757245214620088B659 /* Frameworks */,
 				0DDA6758245214620088B659 /* Resources */,
+				0D0E6BC52456E66200F69140 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0D0E6BC02456E66200F69140 /* PBXTargetDependency */,
 			);
 			name = Playzlib;
 			productName = Playzlib;
@@ -343,6 +441,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Laurens;
 				TargetAttributes = {
+					0D0E6BB62456E66200F69140 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					0DDA6759245214620088B659 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -372,15 +473,24 @@
 				0DDA6759245214620088B659 /* Playzlib */,
 				0DDA6772245214650088B659 /* PlayzlibTests */,
 				0DDA677D245214650088B659 /* PlayzlibUITests */,
+				0D0E6BB62456E66200F69140 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D0E6BB52456E66200F69140 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DDA6758245214620088B659 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0E6B732456B4A600F69140 /* applogo.png in Resources */,
 				0DC403122454443500C58CB2 /* klasseraus.mp3 in Resources */,
 				0DDA676D245214650088B659 /* LaunchScreen.storyboard in Resources */,
 				0DDA6767245214650088B659 /* Assets.xcassets in Resources */,
@@ -404,12 +514,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D0E6BB32456E66200F69140 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D97876424573F9E00E59AF3 /* Playz+CoreDataProperties.swift in Sources */,
+				0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */,
+				0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */,
+				0D0E6BCB2456EBE500F69140 /* CreatePlayzViewController.swift in Sources */,
+				0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */,
+				0D97876324573F9C00E59AF3 /* Playz+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DDA6756245214620088B659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0D2C5F1A24549A1400141ADF /* SettingsView.swift in Sources */,
 				0D67ECB6245329F2003D8F43 /* MyPlayzView.swift in Sources */,
+				0D0E6B7124562D4800F69140 /* PlaybackPlayz.swift in Sources */,
 				0DDA675E245214620088B659 /* AppDelegate.swift in Sources */,
 				0D2C5F13245482D100141ADF /* Settings.swift in Sources */,
 				0DDA6760245214620088B659 /* SceneDelegate.swift in Sources */,
@@ -448,6 +572,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0D0E6BC02456E66200F69140 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D0E6BB62456E66200F69140 /* ShareExtension */;
+			targetProxy = 0D0E6BBF2456E66200F69140 /* PBXContainerItemProxy */;
+		};
 		0DDA6775245214650088B659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0DDA6759245214620088B659 /* Playzlib */;
@@ -472,6 +601,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0D0E6BC32456E66200F69140 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8TS77B7LU7;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.laurensk.Playzlib.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D0E6BC42456E66200F69140 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8TS77B7LU7;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.laurensk.Playzlib.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0DDA6785245214650088B659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,7 +758,9 @@
 		0DDA6788245214650088B659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Playzlib/Playzlib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100001;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -612,7 +783,9 @@
 		0DDA6789245214650088B659 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Playzlib/Playzlib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100001;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -720,6 +893,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D0E6BC22456E66200F69140 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0E6BC32456E66200F69140 /* Debug */,
+				0D0E6BC42456E66200F69140 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0DDA6755245214620088B659 /* Build configuration list for PBXProject "Playzlib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

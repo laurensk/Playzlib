@@ -12,6 +12,8 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    var playbackPlayz = PlaybackPlayz()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -24,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let homeView = HomeView().environment(\.managedObjectContext, context)
+        let homeView = HomeView().environment(\.managedObjectContext, context).environmentObject(playbackPlayz)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

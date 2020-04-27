@@ -19,7 +19,7 @@ extension Playz {
 
     @NSManaged public var uuid: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var audioName: String?
+    @NSManaged public var audioUrl: URL?
     @NSManaged public var lastPlayed: Date?
     @NSManaged public var creationDate: Date?
 

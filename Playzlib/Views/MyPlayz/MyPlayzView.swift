@@ -27,7 +27,7 @@ struct MyPlayzView: View {
     
     var addPlayzButton: some View {
         Button(action: {
-            self.addPlayz()
+            //self.addPlayz()
         }) {
             Image(systemName: "plus").imageScale(.large)
         }
@@ -52,7 +52,7 @@ struct MyPlayzView: View {
                     }, id: \.uuid) { playz in
                         PlayzView(playz: playz).padding(.top, 10)
                     }
-                }
+                }.buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("My Playz")
                 .navigationBarItems(leading: showSettingsButton, trailing: addPlayzButton)
         }.navigationViewStyle(StackNavigationViewStyle())
@@ -70,19 +70,19 @@ struct MyPlayzView: View {
         UITableViewCell.appearance().selectionStyle = .none
     }
     
-    func addPlayz() {
-        let newPlayz = Playz(context: context)
-        newPlayz.uuid = UUID()
-        newPlayz.name = "Leave the class. Leave!"
-        newPlayz.audioName = "klasseraus.mp3"
-        newPlayz.creationDate = Date()
-        
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
-    }
+//    func addPlayz() {
+//        let newPlayz = Playz(context: context)
+//        newPlayz.uuid = UUID()
+//        newPlayz.name = "Leave the class. Leave!"
+//        newPlayz.audioName = "klasseraus.mp3"
+//        newPlayz.creationDate = Date()
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            print(error)
+//        }
+//    }
     
 }
 
