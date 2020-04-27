@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      open inputURL: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:],
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         return true
     }
 
@@ -39,14 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: CustomPersistantContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Playzlib")
+        let container = CustomPersistantContainer(name: "Playzlib")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -84,3 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+class CustomPersistantContainer : NSPersistentContainer {
+    
+    static let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.laurensk.Playzlib")!
+    let storeDescription = NSPersistentStoreDescription(url: url)
+    
+    override class func defaultDirectoryURL() -> URL {
+        return url
+    }
+}

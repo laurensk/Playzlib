@@ -21,17 +21,16 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     func playSound(playz: Playz) {
         do {
-            playzPlayer = try AVAudioPlayer(contentsOf: URL(resolvingAliasFileAt: playz.audioUrl!))
+            playzPlayer = try AVAudioPlayer(contentsOf: URL(resolvingAliasFileAt: playz.audioUrl!)) // at this point i cannot read the icloud file. i have to use a local copy!
             playzPlayer.delegate = self
             soundPlaying.wrappedValue = true
             playzPlayer.play()
         } catch {
             soundPlaying.wrappedValue = false
             print("couldn't play.. sorry!")
+            print("\(playz.audioUrl)")
         }
-        
-        
-        
+    
     }
     
     func stop(playz: Playz) {

@@ -96,6 +96,7 @@ class CreatePlayzViewController: UIViewController {
                             let fileUrl = file as? URL
                             let fileName = fileUrl?.lastPathComponent
                             
+                            // debug this - not working...
                             let asset = AVURLAsset(url: fileUrl!, options: nil)
                             asset.writeAudioTrack(to: fileUrl!, success: {
                                 
@@ -128,8 +129,12 @@ class CreatePlayzViewController: UIViewController {
     }
     
     private func savePlayzFile(_ playzFile: PlayzFile) {
-        let store = CoreDataStack.store
-        store.storePlayz(playzFile)
+        
+        // save it to file system
+        
+        // generate the playz here to set the audio name to uuid
+        
+        CoreDataStack.store.storePlayz(playzFile) // pass the finished playz here
     }
     
     // MARK: - User Interface

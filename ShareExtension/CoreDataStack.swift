@@ -25,7 +25,7 @@ final class CoreDataStack {
     func storePlayz(_ playzFile : PlayzFile) {
         
         let playz = Playz(context: context)
-        playz.audioUrl = playzFile.fileUrl
+        playz.audioUrl = playzFile.originalFile as? URL
         playz.creationDate = Date()
         playz.lastPlayed = Date()
         playz.name = playzFile.name
@@ -36,7 +36,7 @@ final class CoreDataStack {
     
     lazy var persistentContainer: CustomPersistantContainer = {
         
-        let container = CustomPersistantContainer(name: "PlayzModel")
+        let container = CustomPersistantContainer(name: "Playzlib")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 
