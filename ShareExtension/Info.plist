@@ -20,12 +20,16 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPrincipalClass</key>
 		<string>CreatePlayzNavigationController</string>
 		<key>NSExtensionAttributes</key>
 		<dict>
+			<key>RequestOpenAccess</key>
+			<true/>
 			<key>NSExtensionActivationRule</key>
 			<string>SUBQUERY (
         extensionItems,

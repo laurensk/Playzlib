@@ -16,13 +16,6 @@ enum ErrorType {
     case saveError
 }
 
-struct PlayzFile {
-    var originalFile: Any?
-    var fileUrl: URL?
-    var fileName: String?
-    var name: String?
-}
-
 class CreatePlayzViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -89,22 +82,12 @@ class CreatePlayzViewController: UIViewController {
         for extensionItem in extensionItems {
             if let itemProviders = extensionItem.attachments {
                 for itemProvider in itemProviders {
-                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeMPEG4 as String) {
+                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeMovie as String) {
                         
-                        itemProvider.loadItem(forTypeIdentifier: kUTTypeMPEG4 as String, options: nil, completionHandler: { file, error in
+                        itemProvider.loadItem(forTypeIdentifier: kUTTypeMovie as String, options: nil, completionHandler: { file, error in
                             
-                            let fileUrl = file as? URL
-                            let fileName = fileUrl?.lastPathComponent
-                            
-                            // debug this - not working...
-                            let asset = AVURLAsset(url: fileUrl!, options: nil)
-                            asset.writeAudioTrack(to: fileUrl!, success: {
-                                
-                                let playzFile: PlayzFile = PlayzFile(originalFile: file, fileUrl: fileUrl, fileName: fileName, name: name)
-                                self.savePlayzFile(playzFile)
-                                
-                            }) { (error) in
-                                self.saveError(errorType: .validationError)
+                            if let url = file as? URL {
+                                self.savePlayzFile(url, name)
                             }
                         })
                         
@@ -112,11 +95,9 @@ class CreatePlayzViewController: UIViewController {
                         
                         itemProvider.loadItem(forTypeIdentifier: kUTTypeAudio as String, options: nil, completionHandler: { file, error in
                             
-                            let fileUrl = file as? URL
-                            let fileName = fileUrl?.lastPathComponent
-                            
-                            let playzFile: PlayzFile = PlayzFile(originalFile: file, fileUrl: fileUrl, fileName: fileName, name: name)
-                            self.savePlayzFile(playzFile)
+                            if let url = file as? URL {
+                                self.savePlayzFile(url, name)
+                            }
                             
                         })
                         
@@ -128,13 +109,89 @@ class CreatePlayzViewController: UIViewController {
         return true
     }
     
-    private func savePlayzFile(_ playzFile: PlayzFile) {
+    private func savePlayzFile(_ fileURL: URL, _ name: String) {
         
-        // save it to file system
+        let playz = Playz(context: CoreDataStack.store.context)
+        playz.uuid = UUID()
+        playz.audioUrl = copyPlayz(withOriginURL: fileURL, withDestinationName: prepareAudioName(playz: playz, fileURL: fileURL), uuid: playz.uuid?.uuidString ?? "UUID")
+        playz.name = name
+        playz.lastPlayed = nil
+        playz.creationDate = Date()
         
-        // generate the playz here to set the audio name to uuid
+        try! CoreDataStack.store.context.save()
+    }
+    
+    // MARK: - File System Stuff (pls make a different class then)
+    
+    func prepareAudioName(playz: Playz, fileURL: URL) -> String {
         
-        CoreDataStack.store.storePlayz(playzFile) // pass the finished playz here
+        var audioName = playz.uuid?.uuidString ?? "UUID"
+        audioName.append(".")
+        audioName.append(fileURL.pathExtension)
+        
+        return audioName
+    }
+    
+    func createDirectory(withFolderName dest: String, toDirectory directory: FileManager.SearchPathDirectory = .applicationSupportDirectory) {
+        let fileManager = FileManager.default
+        let url = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.laurensk.Playzlib")
+        if let applicationSupportURL = url {
+            do{
+                var newURL = applicationSupportURL
+                newURL = newURL.appendingPathComponent(dest, isDirectory: true)
+                try fileManager.createDirectory(at: newURL, withIntermediateDirectories: true, attributes: nil)
+            }
+            catch{
+                print("error \(error)")
+            }
+        }
+    }
+    
+    func copyPlayz(withOriginURL originURL:URL, withDestinationName destinationName: String, uuid: String) -> URL {
+        
+        let directoryName = "MyPlayz"
+        
+        createDirectory(withFolderName: directoryName)
+        
+        let fileManager = FileManager.default
+        let path = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.laurensk.Playzlib")!
+        
+        let baseURL = path.appendingPathComponent(directoryName, isDirectory: true)
+        let audioURL = baseURL.appendingPathComponent(destinationName)
+        
+        _ = originURL.startAccessingSecurityScopedResource()
+        
+        do {
+            try fileManager.copyItem(at: originURL, to: audioURL)
+            originURL.stopAccessingSecurityScopedResource()
+            
+            if audioURL.pathExtension == "mov" || audioURL.pathExtension == "mp4" {
+                return extractAudioAndSave(videoURL: audioURL, baseURL: baseURL, uuid: uuid)
+            } else {
+                return audioURL
+            }
+            
+        }
+        catch let error {
+            originURL.stopAccessingSecurityScopedResource()
+            print ("\(error) error")
+        }
+        
+        originURL.stopAccessingSecurityScopedResource()
+        return URL(string: "https://www.laurensk.at")!
+    }
+    
+    func extractAudioAndSave(videoURL: URL, baseURL: URL, uuid: String) -> URL {
+        
+        let audioURL = baseURL.appendingPathComponent(uuid).appendingPathComponent(".mov")
+        
+        let asset = AVURLAsset(url: videoURL, options: nil)
+        asset.writeAudioTrack(to: audioURL, success: {}) { (error) in
+            self.saveError(errorType: .validationError)
+        }
+        
+        return audioURL
+        
     }
     
     // MARK: - User Interface

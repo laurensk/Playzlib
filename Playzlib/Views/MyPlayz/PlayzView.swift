@@ -41,7 +41,7 @@ struct PlayzView: View {
                     Image(systemName: "ellipsis").rotationEffect(.degrees(90)).imageScale(.large).foregroundColor(.secondary)
                 }.actionSheet(isPresented: $showMenuSheet) {
                     ActionSheet(title: Text("Playz"), message: Text("\(playz.name ?? "Untitled")"), buttons: [
-                        .default(Text("Edit Playz"), action: {print("edit")}),
+                        .default(Text("Edit Playz"), action: {print(self.playz.audioUrl)}),
                         .destructive(Text("Delete Playz"), action: {print("delete")}),
                         .cancel()
                     ])

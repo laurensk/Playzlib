@@ -17,24 +17,25 @@ final class CoreDataStack {
     private init() {}
     
     
-    var context: NSManagedObjectContext {
+    public var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
     
-    func storePlayz(_ playzFile : PlayzFile) {
+    func storePlayz(_ playz : Playz) {
         
-        let playz = Playz(context: context)
-        playz.audioUrl = playzFile.originalFile as? URL
-        playz.creationDate = Date()
-        playz.lastPlayed = Date()
-        playz.name = playzFile.name
-        playz.uuid = UUID()
+        let newPlayz = Playz(context: context)
+        
+        newPlayz.uuid = playz.uuid
+        newPlayz.name = playz.name
+        newPlayz.lastPlayed = playz.lastPlayed
+        newPlayz.creationDate = playz.creationDate
+        newPlayz.audioUrl = playz.audioUrl
         
         try! context.save()
     }
     
-    lazy var persistentContainer: CustomPersistantContainer = {
+    public lazy var persistentContainer: CustomPersistantContainer = {
         
         let container = CustomPersistantContainer(name: "Playzlib")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
