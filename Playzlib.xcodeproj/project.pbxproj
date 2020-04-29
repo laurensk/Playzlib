@@ -172,9 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				0D7CC58C245743EE00DE0E85 /* ShareExtension.entitlements */,
-				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
-				0D0E6BD42457328000F69140 /* CoreDataStack.swift */,
-				0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */,
+				0D920929245A19A00089A5B7 /* Views */,
+				0D92092A245A19A70089A5B7 /* Logic */,
 				0D0E6BBE2456E66200F69140 /* Info.plist */,
 			);
 			path = ShareExtension;
@@ -276,6 +275,23 @@
 				0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */,
 			);
 			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		0D920929245A19A00089A5B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D92092A245A19A70089A5B7 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */,
+				0D0E6BD42457328000F69140 /* CoreDataStack.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		0DB1DBC62455FD0D00A2470E /* Core Data */ = {

@@ -113,7 +113,7 @@ class CreatePlayzViewController: UIViewController {
         
         let playz = Playz(context: CoreDataStack.store.context)
         playz.uuid = UUID()
-        playz.audioUrl = copyPlayz(withOriginURL: fileURL, withDestinationName: prepareAudioName(playz: playz, fileURL: fileURL), uuid: playz.uuid?.uuidString ?? "UUID")
+        playz.audioUrl = copyPlayz(originURL: fileURL, destinationName: prepareAudioName(playz: playz, fileURL: fileURL))
         playz.name = name
         playz.lastPlayed = nil
         playz.creationDate = Date()
@@ -147,7 +147,17 @@ class CreatePlayzViewController: UIViewController {
         }
     }
     
-    func copyPlayz(withOriginURL originURL:URL, withDestinationName destinationName: String, uuid: String) -> URL {
+    func copyPlayz(originURL: URL, destinationName: String) -> URL {
+        // check if audio or video
+        return copyPlayzFromAudio(originURL: originURL, destinationName: description)
+    }
+    
+    func copyPlayzFromVideo(originURL: URL, destinationName: String) -> URL {
+        return URL(string: "String")!
+        // implement video to audio function here
+    }
+    
+    func copyPlayzFromAudio(originURL: URL, destinationName: String) -> URL {
         
         let directoryName = "MyPlayz"
         
@@ -164,12 +174,7 @@ class CreatePlayzViewController: UIViewController {
         do {
             try fileManager.copyItem(at: originURL, to: audioURL)
             originURL.stopAccessingSecurityScopedResource()
-            
-            if audioURL.pathExtension == "mov" || audioURL.pathExtension == "mp4" {
-                return extractAudioAndSave(videoURL: audioURL, baseURL: baseURL, uuid: uuid)
-            } else {
-                return audioURL
-            }
+            return audioURL
             
         }
         catch let error {
