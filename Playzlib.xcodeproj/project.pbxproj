@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		0D0E6B7124562D4800F69140 /* PlaybackPlayz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */; };
 		0D0E6B732456B4A600F69140 /* applogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E6B722456B4A600F69140 /* applogo.png */; };
-		0D0E6BC12456E66200F69140 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D0E6BB72456E66200F69140 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D0E6BC12456E66200F69140 /* Playzlib Importer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D0E6BB72456E66200F69140 /* Playzlib Importer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D0E6BCB2456EBE500F69140 /* CreatePlayzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */; };
 		0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */; };
 		0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BD42457328000F69140 /* CoreDataStack.swift */; };
 		0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */; };
 		0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F0D24547E9B00141ADF /* Playz.swift */; };
-		0D2C5F1024547F4500141ADF /* DemoPlayz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F0F24547F4500141ADF /* DemoPlayz.swift */; };
 		0D2C5F13245482D100141ADF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F12245482D100141ADF /* Settings.swift */; };
 		0D2C5F152454865900141ADF /* AudioPlayerHelpers2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F142454865900141ADF /* AudioPlayerHelpers2.swift */; };
 		0D2C5F1A24549A1400141ADF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F1924549A1400141ADF /* SettingsView.swift */; };
@@ -30,7 +29,6 @@
 		0D97876424573F9E00E59AF3 /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
 		0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */; };
 		0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
-		0DC403122454443500C58CB2 /* klasseraus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DC403112454443500C58CB2 /* klasseraus.mp3 */; };
 		0DC40314245446BD00C58CB2 /* AudioPlayerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */; };
 		0DDA675E245214620088B659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675D245214620088B659 /* AppDelegate.swift */; };
 		0DDA6760245214620088B659 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675F245214620088B659 /* SceneDelegate.swift */; };
@@ -72,7 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0D0E6BC12456E66200F69140 /* ShareExtension.appex in Embed App Extensions */,
+				0D0E6BC12456E66200F69140 /* Playzlib Importer.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,13 +80,12 @@
 /* Begin PBXFileReference section */
 		0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPlayz.swift; sourceTree = "<group>"; };
 		0D0E6B722456B4A600F69140 /* applogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applogo.png; sourceTree = "<group>"; };
-		0D0E6BB72456E66200F69140 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0E6BB72456E66200F69140 /* Playzlib Importer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Playzlib Importer.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0E6BBE2456E66200F69140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayzViewController.swift; sourceTree = "<group>"; };
 		0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAudioTrack.swift; sourceTree = "<group>"; };
 		0D0E6BD42457328000F69140 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0D2C5F0D24547E9B00141ADF /* Playz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playz.swift; sourceTree = "<group>"; };
-		0D2C5F0F24547F4500141ADF /* DemoPlayz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPlayz.swift; sourceTree = "<group>"; };
 		0D2C5F12245482D100141ADF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0D2C5F142454865900141ADF /* AudioPlayerHelpers2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHelpers2.swift; sourceTree = "<group>"; };
 		0D2C5F1924549A1400141ADF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayzSearchBar.swift; sourceTree = "<group>"; };
 		0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playz+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0DC403112454443500C58CB2 /* klasseraus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = klasseraus.mp3; sourceTree = "<group>"; };
 		0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHelpers.swift; sourceTree = "<group>"; };
 		0DDA675A245214620088B659 /* Playzlib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playzlib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA675D245214620088B659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,15 +267,6 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		0DC403102454442500C58CB2 /* Development Assets */ = {
-			isa = PBXGroup;
-			children = (
-				0DC403112454443500C58CB2 /* klasseraus.mp3 */,
-				0D2C5F0F24547F4500141ADF /* DemoPlayz.swift */,
-			);
-			path = "Development Assets";
-			sourceTree = "<group>";
-		};
 		0DDA6751245214620088B659 = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +284,7 @@
 				0DDA675A245214620088B659 /* Playzlib.app */,
 				0DDA6773245214650088B659 /* PlayzlibTests.xctest */,
 				0DDA677E245214650088B659 /* PlayzlibUITests.xctest */,
-				0D0E6BB72456E66200F69140 /* ShareExtension.appex */,
+				0D0E6BB72456E66200F69140 /* Playzlib Importer.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,7 +304,6 @@
 				0DDA676B245214650088B659 /* LaunchScreen.storyboard */,
 				0D846ABE2454C6E1009B7A7E /* Info.plist */,
 				0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */,
-				0DC403102454442500C58CB2 /* Development Assets */,
 			);
 			path = Playzlib;
 			sourceTree = "<group>";
@@ -357,7 +343,7 @@
 			);
 			name = ShareExtension;
 			productName = ShareExtension;
-			productReference = 0D0E6BB72456E66200F69140 /* ShareExtension.appex */;
+			productReference = 0D0E6BB72456E66200F69140 /* Playzlib Importer.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		0DDA6759245214620088B659 /* Playzlib */ = {
@@ -475,7 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0E6B732456B4A600F69140 /* applogo.png in Resources */,
-				0DC403122454443500C58CB2 /* klasseraus.mp3 in Resources */,
 				0DDA676D245214650088B659 /* LaunchScreen.storyboard in Resources */,
 				0DDA6767245214650088B659 /* Assets.xcassets in Resources */,
 			);
@@ -533,7 +518,6 @@
 				0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */,
 				0D67ECB8245329FF003D8F43 /* PlayzlibView.swift in Sources */,
 				0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */,
-				0D2C5F1024547F4500141ADF /* DemoPlayz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +574,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 100001;
 				DEVELOPMENT_TEAM = 8TS77B7LU7;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -597,8 +582,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurensk.Playzlib.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Playzlib Importer";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -610,6 +596,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 100001;
 				DEVELOPMENT_TEAM = 8TS77B7LU7;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -617,8 +604,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurensk.Playzlib.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Playzlib Importer";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>ShareExtension</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,19 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>NSExtension</key>
 	<dict>
-		<key>NSExtensionPrincipalClass</key>
-		<string>CreatePlayzNavigationController</string>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>RequestOpenAccess</key>
-			<true/>
 			<key>NSExtensionActivationRule</key>
 			<string>SUBQUERY (
         extensionItems,
@@ -37,15 +33,19 @@
             SUBQUERY (
                 $extensionItem.attachments,
                 $attachment,
-                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.audiovisual-content&quot; OR
-                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.mp4&quot; OR
-                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.mov&quot; OR
-                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.mp3&quot;
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.audiovisual-content" OR
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.mp4" OR
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.mov" OR
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.mp3"
             ).@count == 1
     ).@count == 1</string>
+			<key>RequestOpenAccess</key>
+			<true/>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.share-services</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>CreatePlayzNavigationController</string>
 	</dict>
 </dict>
 </plist>
