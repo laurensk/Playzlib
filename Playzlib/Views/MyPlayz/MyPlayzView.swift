@@ -21,10 +21,6 @@ struct MyPlayzView: View {
     @State private var showSettings = false
     @State private var searchText = ""
     
-    let navigateToOldView: some View = NavigationLink(destination: ContentView()) {
-        Image(systemName: "arrow.left.circle.fill").imageScale(.large)
-    }
-    
     var addPlayzButton: some View {
         Button(action: {
             //self.addPlayz()
@@ -69,20 +65,6 @@ struct MyPlayzView: View {
         UITableView.appearance().allowsSelection = false
         UITableViewCell.appearance().selectionStyle = .none
     }
-    
-//    func addPlayz() {
-//        let newPlayz = Playz(context: context)
-//        newPlayz.uuid = UUID()
-//        newPlayz.name = "Leave the class. Leave!"
-//        newPlayz.audioName = "klasseraus.mp3"
-//        newPlayz.creationDate = Date()
-//
-//        do {
-//            try context.save()
-//        } catch {
-//            print(error)
-//        }
-//    }
     
 }
 

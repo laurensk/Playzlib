@@ -15,8 +15,11 @@ struct PlayzView: View {
     let playz: Playz
     var playzPlayer = PlayzAudioPlayer()
     
+    let activityViewController = SwiftUIActivityViewController()
+    
     @State private var soundPlaying = false
     @State private var showMenuSheet = false
+    @State private var showShareSheet = false
     
     var body: some View {
         
@@ -41,10 +44,15 @@ struct PlayzView: View {
                     Image(systemName: "ellipsis").rotationEffect(.degrees(90)).imageScale(.large).foregroundColor(.secondary)
                 }.actionSheet(isPresented: $showMenuSheet) {
                     ActionSheet(title: Text("Playz"), message: Text("\(playz.name ?? "Untitled")"), buttons: [
+                        .default(Text("Share Playz"), action: {
+                            self.showShareSheet.toggle()
+                        }),
                         .default(Text("Edit Playz"), action: {print(self.playz.audioUrl)}),
                         .destructive(Text("Delete Playz"), action: {print("delete")}),
                         .cancel()
                     ])
+                }.sheet(isPresented: $showShareSheet) {
+                    SwiftUIActivityViewController(audioURL: self.playz.audioUrl)
                 }
                 ZStack {
                     RoundedRectangle(cornerRadius: 13).fill(LinearGradient(gradient:  Gradient(colors: [Color("playButtonGradient1"), Color("playButtonGradient2")]), startPoint: .top, endPoint: .bottom))
