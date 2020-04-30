@@ -23,7 +23,7 @@
 		0D67ECB4245329B2003D8F43 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB3245329B2003D8F43 /* TabBarView.swift */; };
 		0D67ECB6245329F2003D8F43 /* MyPlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */; };
 		0D67ECB8245329FF003D8F43 /* PlayzlibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB7245329FF003D8F43 /* PlayzlibView.swift */; };
-		0D67ECBA24532F01003D8F43 /* PlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB924532F01003D8F43 /* PlayzView.swift */; };
+		0D67ECBA24532F01003D8F43 /* PlayzRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB924532F01003D8F43 /* PlayzRowView.swift */; };
 		0D846AC12454C74E009B7A7E /* PlayzSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */; };
 		0D97876324573F9C00E59AF3 /* Playz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */; };
 		0D97876424573F9E00E59AF3 /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
@@ -34,7 +34,6 @@
 		0DDA675E245214620088B659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675D245214620088B659 /* AppDelegate.swift */; };
 		0DDA6760245214620088B659 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675F245214620088B659 /* SceneDelegate.swift */; };
 		0DDA6763245214620088B659 /* Playzlib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */; };
-		0DDA6765245214620088B659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6764245214620088B659 /* ContentView.swift */; };
 		0DDA6767245214650088B659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA6766245214650088B659 /* Assets.xcassets */; };
 		0DDA676D245214650088B659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA676B245214650088B659 /* LaunchScreen.storyboard */; };
 		0DDA6778245214650088B659 /* PlayzlibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6777245214650088B659 /* PlayzlibTests.swift */; };
@@ -96,7 +95,7 @@
 		0D67ECB3245329B2003D8F43 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayzView.swift; sourceTree = "<group>"; };
 		0D67ECB7245329FF003D8F43 /* PlayzlibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzlibView.swift; sourceTree = "<group>"; };
-		0D67ECB924532F01003D8F43 /* PlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzView.swift; sourceTree = "<group>"; };
+		0D67ECB924532F01003D8F43 /* PlayzRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzRowView.swift; sourceTree = "<group>"; };
 		0D7CC58B245743BE00DE0E85 /* Playzlib.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playzlib.entitlements; sourceTree = "<group>"; };
 		0D7CC58C245743EE00DE0E85 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		0D846ABE2454C6E1009B7A7E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		0DDA675D245214620088B659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DDA675F245214620088B659 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0DDA6762245214620088B659 /* Playzlib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Playzlib.xcdatamodel; sourceTree = "<group>"; };
-		0DDA6764245214620088B659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0DDA6766245214650088B659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DDA676C245214650088B659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DDA6773245214650088B659 /* PlayzlibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayzlibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,8 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */,
-				0D67ECB924532F01003D8F43 /* PlayzView.swift */,
-				0DDA6764245214620088B659 /* ContentView.swift */,
+				0D67ECB924532F01003D8F43 /* PlayzRowView.swift */,
 			);
 			path = MyPlayz;
 			sourceTree = "<group>";
@@ -524,12 +521,11 @@
 				0D2C5F152454865900141ADF /* AudioPlayerHelpers2.swift in Sources */,
 				0D67ECB22453294D003D8F43 /* HomeView.swift in Sources */,
 				0D67ECB4245329B2003D8F43 /* TabBarView.swift in Sources */,
-				0DDA6765245214620088B659 /* ContentView.swift in Sources */,
 				0DDA6763245214620088B659 /* Playzlib.xcdatamodeld in Sources */,
 				0D846AC12454C74E009B7A7E /* PlayzSearchBar.swift in Sources */,
 				0DC40314245446BD00C58CB2 /* AudioPlayerHelpers.swift in Sources */,
 				0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */,
-				0D67ECBA24532F01003D8F43 /* PlayzView.swift in Sources */,
+				0D67ECBA24532F01003D8F43 /* PlayzRowView.swift in Sources */,
 				0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */,
 				0D67ECB8245329FF003D8F43 /* PlayzlibView.swift in Sources */,
 				0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */,
