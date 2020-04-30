@@ -38,7 +38,9 @@ class CreatePlayzViewController: UIViewController {
     
     @objc private func saveAction() {
         if validateForm() {
-            savePlayz(name: textField.text ?? "Untitled") ? dismissExtension() : saveError(errorType: .saveError)
+            if !savePlayz(name: textField.text ?? "Untitled") {
+                saveError(errorType: .saveError)
+            }
         } else {
             saveError(errorType: .validationError)
         }
@@ -118,7 +120,13 @@ class CreatePlayzViewController: UIViewController {
         playz.lastPlayed = nil
         playz.creationDate = Date()
         
-        try! CoreDataStack.store.context.save()
+        do {
+            try CoreDataStack.store.context.save()
+            dismissExtension()
+        } catch {
+            saveError(errorType: .saveError)
+        }
+        
     }
     
     // MARK: - File System Stuff (pls make a different class then)
@@ -149,12 +157,38 @@ class CreatePlayzViewController: UIViewController {
     
     func copyPlayz(originURL: URL, destinationName: String) -> URL {
         // check if audio or video
-        return copyPlayzFromAudio(originURL: originURL, destinationName: description)
+        if originURL.pathExtension.lowercased() == "mov" || originURL.pathExtension.lowercased() == "mp4" {
+            return copyPlayzFromVideo(originURL: originURL, destinationName: destinationName)
+        } else {
+            return copyPlayzFromAudio(originURL: originURL, destinationName: destinationName)
+        }
     }
     
     func copyPlayzFromVideo(originURL: URL, destinationName: String) -> URL {
-        return URL(string: "String")!
-        // implement video to audio function here
+        
+        // implement audio convertion here
+        // test that thing....
+        
+        let directoryName = "MyPlayz"
+        
+        createDirectory(withFolderName: directoryName)
+        
+        let fileManager = FileManager.default
+        let path = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.laurensk.Playzlib")!
+        
+        let destinationURL = path.appendingPathComponent(directoryName, isDirectory: true).appendingPathComponent(destinationName)
+        _ = originURL.startAccessingSecurityScopedResource()
+        
+        
+        let asset = AVURLAsset(url: originURL, options: nil)
+        asset.writeAudioTrackToURL(destinationURL) { (success, error) -> () in
+            if !success {
+                print("\(error) error")
+            }
+        }
+        
+        originURL.stopAccessingSecurityScopedResource()
+        return destinationURL
     }
     
     func copyPlayzFromAudio(originURL: URL, destinationName: String) -> URL {
@@ -166,15 +200,13 @@ class CreatePlayzViewController: UIViewController {
         let fileManager = FileManager.default
         let path = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.laurensk.Playzlib")!
         
-        let baseURL = path.appendingPathComponent(directoryName, isDirectory: true)
-        let audioURL = baseURL.appendingPathComponent(destinationName)
-        
+        let destinationURL = path.appendingPathComponent(directoryName, isDirectory: true).appendingPathComponent(destinationName)
         _ = originURL.startAccessingSecurityScopedResource()
         
         do {
-            try fileManager.copyItem(at: originURL, to: audioURL)
+            try fileManager.copyItem(at: originURL, to: destinationURL)
             originURL.stopAccessingSecurityScopedResource()
-            return audioURL
+            return destinationURL
             
         }
         catch let error {
@@ -184,19 +216,6 @@ class CreatePlayzViewController: UIViewController {
         
         originURL.stopAccessingSecurityScopedResource()
         return URL(string: "https://www.laurensk.at")!
-    }
-    
-    func extractAudioAndSave(videoURL: URL, baseURL: URL, uuid: String) -> URL {
-        
-        let audioURL = baseURL.appendingPathComponent(uuid).appendingPathComponent(".mov")
-        
-        let asset = AVURLAsset(url: videoURL, options: nil)
-        asset.writeAudioTrack(to: audioURL, success: {}) { (error) in
-            self.saveError(errorType: .validationError)
-        }
-        
-        return audioURL
-        
     }
     
     // MARK: - User Interface

@@ -152,14 +152,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D0E6B6F24562D2700F69140 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
 		0D0E6B742456B4F600F69140 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				0D7CC58C245743EE00DE0E85 /* ShareExtension.entitlements */,
+				0D0E6BBE2456E66200F69140 /* Info.plist */,
 				0D920929245A19A00089A5B7 /* Views */,
 				0D92092A245A19A70089A5B7 /* Logic */,
-				0D0E6BBE2456E66200F69140 /* Info.plist */,
 			);
 			path = ShareExtension;
 			sourceTree = "<group>";
@@ -182,26 +174,11 @@
 		0D2C5F0B24547E4500141ADF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0D2C5F0C24547E4B00141ADF /* Audio */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		0D2C5F0C24547E4B00141ADF /* Audio */ = {
-			isa = PBXGroup;
-			children = (
+				0D2C5F12245482D100141ADF /* Settings.swift */,
 				0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */,
 				0D2C5F142454865900141ADF /* AudioPlayerHelpers2.swift */,
 			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
-		0D2C5F11245482C000141ADF /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				0D2C5F12245482D100141ADF /* Settings.swift */,
-			);
-			path = Settings;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0D2C5F18245497FB00141ADF /* Settings */ = {
@@ -215,19 +192,19 @@
 		0D67ECA9245328E6003D8F43 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
 				0D2C5F0D24547E9B00141ADF /* Playz.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0D67ECAA245328EA003D8F43 /* Data */ = {
+		0D67ECAA245328EA003D8F43 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				0D0E6B6F24562D2700F69140 /* Environment */,
-				0DB1DBC62455FD0D00A2470E /* Core Data */,
-				0D2C5F11245482C000141ADF /* Settings */,
+				0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */,
+				0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */,
 			);
-			path = Data;
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		0D67ECAB245328F1003D8F43 /* Views */ = {
@@ -294,15 +271,6 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		0DB1DBC62455FD0D00A2470E /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */,
-				0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */,
-			);
-			path = "Core Data";
-			sourceTree = "<group>";
-		};
 		0DC403102454442500C58CB2 /* Development Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,11 +309,11 @@
 				0DDA675D245214620088B659 /* AppDelegate.swift */,
 				0DDA675F245214620088B659 /* SceneDelegate.swift */,
 				0D67ECAB245328F1003D8F43 /* Views */,
-				0D67ECAA245328EA003D8F43 /* Data */,
+				0D67ECAA245328EA003D8F43 /* Core Data */,
 				0D67ECA9245328E6003D8F43 /* Models */,
 				0D2C5F0B24547E4500141ADF /* Helpers */,
-				0DDA6766245214650088B659 /* Assets.xcassets */,
 				0D0E6B742456B4F600F69140 /* Assets */,
+				0DDA6766245214650088B659 /* Assets.xcassets */,
 				0DDA676B245214650088B659 /* LaunchScreen.storyboard */,
 				0D846ABE2454C6E1009B7A7E /* Info.plist */,
 				0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */,
