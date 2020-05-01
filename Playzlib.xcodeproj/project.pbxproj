@@ -18,6 +18,8 @@
 		0D2C5F13245482D100141ADF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F12245482D100141ADF /* Settings.swift */; };
 		0D2C5F152454865900141ADF /* AudioPlayerHelpers2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F142454865900141ADF /* AudioPlayerHelpers2.swift */; };
 		0D2C5F1A24549A1400141ADF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F1924549A1400141ADF /* SettingsView.swift */; };
+		0D54A171245CBBB4002CABD5 /* CreatePlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */; };
+		0D54A173245CC8CB002CABD5 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54A172245CC8CB002CABD5 /* ExtensionViewController.swift */; };
 		0D5CC75E245C87CE001AF019 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */; };
 		0D5CC75F245C88D5001AF019 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */; };
 		0D5CC761245C89ED001AF019 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC760245C89ED001AF019 /* ExtensionHelpers.swift */; };
@@ -93,6 +95,8 @@
 		0D2C5F12245482D100141ADF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0D2C5F142454865900141ADF /* AudioPlayerHelpers2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHelpers2.swift; sourceTree = "<group>"; };
 		0D2C5F1924549A1400141ADF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayzView.swift; sourceTree = "<group>"; };
+		0D54A172245CC8CB002CABD5 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		0D5CC760245C89ED001AF019 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		0D5CC762245C8BCB001AF019 /* FileManagerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelpers.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
+				0D54A172245CC8CB002CABD5 /* ExtensionViewController.swift */,
+				0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,10 +505,12 @@
 			files = (
 				0D97876424573F9E00E59AF3 /* Playz+CoreDataProperties.swift in Sources */,
 				0D5CC761245C89ED001AF019 /* ExtensionHelpers.swift in Sources */,
+				0D54A171245CBBB4002CABD5 /* CreatePlayzView.swift in Sources */,
 				0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */,
 				0D5CC75F245C88D5001AF019 /* ErrorHandling.swift in Sources */,
 				0D5CC763245C8BCB001AF019 /* FileManagerHelpers.swift in Sources */,
 				0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */,
+				0D54A173245CC8CB002CABD5 /* ExtensionViewController.swift in Sources */,
 				0D0E6BCB2456EBE500F69140 /* CreatePlayzViewController.swift in Sources */,
 				0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */,
 				0D97876324573F9C00E59AF3 /* Playz+CoreDataClass.swift in Sources */,
