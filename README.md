@@ -1,9 +1,11 @@
 # Playzlib-App
 Playzlib is an all new and completely open-source soundboard app for iOS written natively in SwiftUI.
 
-                           |
+My Playz                    |  Settings
 :-------------------------:|:-------------------------:
 ![](https://imgur.com/XvEdeFB.png)  |  ![](https://imgur.com/NbeF4ca.png)
+
+<sup>More features to come.</sup>
 
 ## Main Features
 TODO
