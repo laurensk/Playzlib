@@ -1,7 +1,7 @@
 # Playzlib-App
 
 <p align="center">
-  <img width="150px" height="150px" src="https://imgur.com/Wf6YVqx.png"/>
+  <img width="150px" height="150px" src="https://imgur.com/i3G6xae.png"/>
 </p>
 
 <p align="center">
@@ -13,7 +13,9 @@
   <img src="https://imgur.com/O4ycu22.png" height="700">
 </p>
 
-<sup>*More features to come.</sup>
+<p align="center">
+  <sup>*More features to come.</sup>
+</p>
 
 ## Main Features
 TODO
