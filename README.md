@@ -34,6 +34,6 @@ Since this is an open-source project and should be runnable without further conf
 Feel free to discuss with me on [Twitter](https://twitter.com/LaurensKDev).
 
 ### macOS Catalyst-App
-As I mentioned, Playzlib will not get iCloud synchronization any time soon and therefore, a macOS-Version of Playzlib would make no sense because you can't synchronize your Playz across your Apple devices.
+As I mentioned, Playzlib will not get iCloud synchronization any time soon and therefore, a macOS-Version of Playzlib wouldn't be nice to use. Regardless of this small UX issue, I'll work on a macOS version of Playzlib when the first iOS build is released.
 
 Feel free to discuss with me on [Twitter](https://twitter.com/LaurensKDev).
