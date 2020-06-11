@@ -1,7 +1,7 @@
 # Playzlib-App
 
 <p align="center">
-  <img width="150px" height="150px" src="https://imgur.com/i3G6xae.png"/>
+  <img width="150px" height="150px" src="https://imgur.com/fj93wVT.png"/>
 </p>
 
 <p align="center">
