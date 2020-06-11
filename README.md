@@ -5,7 +5,7 @@ My Playz                    |  Settings
 :-------------------------:|:-------------------------:
 ![](https://imgur.com/XvEdeFB.png)  |  ![](https://imgur.com/NbeF4ca.png)
 
-<sup>More features to come.</sup>
+<sup>*More features to come.</sup>
 
 ## Main Features
 TODO
