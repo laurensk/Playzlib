@@ -1,6 +1,8 @@
 # Playzlib-App
 Playzlib is an all new and completely open-source soundboard app for iOS written natively in SwiftUI.
 
+screenshots
+
 ## Main Features
 TODO
 
@@ -15,9 +17,9 @@ Feel free to contribute to Playzlib or create a new issue so that I can keep tra
 ### A word about iCloud-Sync
 Since this is an open-source project and should be runnable without further configuration or an Apple Developer Subscription after cloning it, I've not planned to implement iCloud synchronization any time soon.
 
-Feel free to discours with me on (Twitter)[https://twitter.com/LaurensKDev].
+Feel free to discours with me on [Twitter](https://twitter.com/LaurensKDev).
 
 ### macOS Catalyst-App
 As I mentioned, Playzlib will not get iCloud synchronization any time soon and therefore, a macOS-Version of Playzlib would make no sense because you can't synchronize your Playz across your Apple devices.
 
-Feel free to discours with me on (Twitter)[https://twitter.com/LaurensKDev].
+Feel free to discours with me on [Twitter](https://twitter.com/LaurensKDev).
