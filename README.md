@@ -24,7 +24,7 @@ TODO
 TODO
 
 Your favourite feature isn't available or planned yet?
-Feel free to contribute to Playzlib or create a new issue so that I can keep track of new features for upcoming updates.
+Feel free to contribute to Playzlib or create a new [issue](https://github.com/laurensk/Playzlib-App/issues/new/choose) so that I can keep track of new features for upcoming updates.
 
 ## FAQ
 
