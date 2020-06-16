@@ -16,12 +16,17 @@ struct TabBarView: View {
                     Image(systemName: "play.circle.fill").imageScale(.large)
                     Text("My Playz")
             }
-            PlayzlibView()
+            HowToView()
                 .tabItem {
-                    Image(systemName: "folder.circle.fill").imageScale(.large)
-                    Text("Playzlib")
+                    Image(systemName: "plus.circle").imageScale(.large)
+                    Text("How to")
             }
-        }
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear").imageScale(.large)
+                    Text("Settings")
+            }
+        }.accentColor(Color("accentColor"))
     }
 }
 

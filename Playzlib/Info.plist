@@ -54,24 +54,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>LSHandlerRank</key>
-			<string>Owner</string>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.image</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Create Playz</string>
-			<key>UTTypeIconFiles</key>
-			<array>
-				<string>applogo.png</string>
-			</array>
-			<key>UTTypeIdentifier</key>
-			<string>public.image</string>
-		</dict>
-	</array>
 </dict>
 </plist>

@@ -22,10 +22,25 @@ struct SettingsView: View {
     
     @State var settings = SettingsToggle()
     
+    init() {
+        UISwitch.appearance().onTintColor = UIColor(named: "accentColor")
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
                 Form {
+                    Section() {
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Image("createPlayzIcon").resizable().scaledToFit().padding(.bottom, 4)
+                                Spacer()
+                            }
+                            Text("Playzlib").font(.system(size: 25, design: .rounded)).fontWeight(.bold).foregroundColor(Color("accentColor"))
+                        }.padding()
+                        
+                    }.frame(height: 200)
                     Section(header: Text("AUDIO SETTINGS")) {
                         List {
                             VStack {
@@ -35,13 +50,16 @@ struct SettingsView: View {
                             }
                         }
                     }
-                }
-            }.navigationBarTitle("Settings")
-                .navigationBarItems(trailing: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Done").fontWeight(.semibold)
-                })
+                    Section(header: Text("ABOUT")) {
+                        List {
+                            VStack {
+                                Text("This is Playzlib")
+                            }
+                        }
+                    }
+                }.listStyle(GroupedListStyle())
+                .environment(\.horizontalSizeClass, .regular)
+            }.navigationBarTitle(Text("Settings"))
         }.onAppear {
             self.setupUI()
         }

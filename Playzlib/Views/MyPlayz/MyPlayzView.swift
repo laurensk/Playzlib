@@ -21,23 +21,6 @@ struct MyPlayzView: View {
     @State private var showSettings = false
     @State private var searchText = ""
     
-    var addPlayzButton: some View {
-        Button(action: {
-            //self.addPlayz()
-        }) {
-            Image(systemName: "plus").imageScale(.large)
-        }
-        
-    }
-    
-    var showSettingsButton: some View {
-        Button(action: {
-            self.showSettings.toggle()
-        }) {
-            Image(systemName: "gear").imageScale(.large)
-        }
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -50,7 +33,6 @@ struct MyPlayzView: View {
                     }
                 }.buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("My Playz")
-                .navigationBarItems(leading: showSettingsButton, trailing: addPlayzButton)
         }.navigationViewStyle(StackNavigationViewStyle())
             .sheet(isPresented: $showSettings) {
                 SettingsView()
