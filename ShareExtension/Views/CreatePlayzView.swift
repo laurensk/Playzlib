@@ -17,7 +17,7 @@ struct CreatePlayzView: View {
     var body: some View {
         VStack {
             ScrollView {
-                Image("createPlayzIcon")
+                Image("createPlayzIcon").resizable().scaledToFit()
                 Text("Create your playz").font(.title)
                 Form {
                     Section {
@@ -42,7 +42,8 @@ struct CreatePlayzView: View {
                             }
                         }
                     }
-                }
+                }.listStyle(GroupedListStyle())
+                .environment(\.horizontalSizeClass, .regular)
             }}
     }
     
