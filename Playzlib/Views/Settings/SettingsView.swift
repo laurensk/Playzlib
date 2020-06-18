@@ -59,7 +59,7 @@ struct SettingsView: View {
                     }
                 }.listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
-            }.navigationBarTitle(Text("Settings"))
+            }.navigationBarTitle("Settings")
         }.onAppear {
             self.setupUI()
         }
