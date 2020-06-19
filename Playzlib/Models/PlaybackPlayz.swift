@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
+
 
 class PlaybackPlayz: ObservableObject {
-    @Published var playbackPlayz: Playz = Playz()
+    @Published var playbackPlayz: Playz = Playz(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
 }

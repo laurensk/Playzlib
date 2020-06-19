@@ -60,6 +60,7 @@ struct SettingsView: View {
                 }.listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
             }.navigationBarTitle("Settings")
+            .navigationViewStyle(StackNavigationViewStyle())
         }.onAppear {
             self.setupUI()
         }

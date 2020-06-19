@@ -12,7 +12,7 @@ struct PlayzView: View {
     
     @EnvironmentObject var playbackPlayz: PlaybackPlayz
     
-    let playz: Playz
+    @ObservedObject var playz: Playz
     var playzPlayer = PlayzAudioPlayer()
     
     let activityViewController = SwiftUIActivityViewController()

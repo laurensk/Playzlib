@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 struct MyPlayzView: View {
     
@@ -38,6 +39,7 @@ struct MyPlayzView: View {
                 SettingsView()
         }.onAppear {
             self.setupUI()
+            self.context.refreshAllObjects()
         }
     }
     

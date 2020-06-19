@@ -14,6 +14,7 @@ struct HowToView: View {
             VStack {
                 Text("How to add a Playz")
             }.navigationBarTitle("Add Sounds")
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
