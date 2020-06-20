@@ -92,7 +92,6 @@ struct EditPlayzView: View {
     
     func savePlayz() {
         self.playz?.name = self.playzName
-        try? self.context.save()
         do {
             try self.context.save()
         } catch let error as NSError {
