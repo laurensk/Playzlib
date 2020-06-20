@@ -14,13 +14,11 @@ struct EditPlayzView: View {
     
     init(playz: Playz) {
         self.playz = playz
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = UIColor.systemGray6
     }
     
     @Environment(\.managedObjectContext) var context
-    
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var playzName: String = ""
     
@@ -77,8 +75,7 @@ struct EditPlayzView: View {
                                 }
                             }
                         }
-                    }.listStyle(GroupedListStyle())
-                        .environment(\.horizontalSizeClass, .regular)
+                    }
                 }
             }.navigationBarTitle(Text("Edit Playz"), displayMode: .inline)
                 .navigationBarItems(leading: cancelButton, trailing: saveButton)
@@ -89,7 +86,6 @@ struct EditPlayzView: View {
         }
     }
     
-    
     func savePlayz() {
         self.playz?.name = self.playzName
         do {
@@ -98,11 +94,5 @@ struct EditPlayzView: View {
             print(error)
         }
         self.presentationMode.wrappedValue.dismiss()
-    }
-}
-
-struct EditPlayzView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyView()
     }
 }

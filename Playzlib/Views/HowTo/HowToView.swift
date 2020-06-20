@@ -15,7 +15,13 @@ struct HowToView: View {
                 Text("How to add a Playz")
             }.navigationBarTitle("Add Sounds")
             .navigationViewStyle(StackNavigationViewStyle())
+        }.onAppear {
+            self.setupUI()
         }
+    }
+    
+    func setupUI() {
+        // ui to come
     }
 }
 

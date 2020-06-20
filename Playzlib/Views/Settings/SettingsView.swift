@@ -22,10 +22,6 @@ struct SettingsView: View {
     
     @State var settings = SettingsToggle()
     
-    init() {
-        UISwitch.appearance().onTintColor = UIColor(named: "accentColor")
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -67,6 +63,7 @@ struct SettingsView: View {
     }
     
     func setupUI() {
+        UISwitch.appearance().onTintColor = UIColor(named: "accentColor")
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .singleLine
         UITableView.appearance().allowsSelection = true
