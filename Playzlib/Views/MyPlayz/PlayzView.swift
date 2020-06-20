@@ -15,11 +15,12 @@ struct PlayzView: View {
     @ObservedObject var playz: Playz
     var playzPlayer = PlayzAudioPlayer()
     
-    let activityViewController = SwiftUIActivityViewController()
-    
     @State private var soundPlaying = false
+    
     @State private var showMenuSheet = false
-    @State private var showShareSheet = false
+    
+    @State private var sheetActive = false
+    @State private var sheetSelected: Sheets = .showShareSheet
     
     var body: some View {
         
@@ -45,14 +46,18 @@ struct PlayzView: View {
                 }.actionSheet(isPresented: $showMenuSheet) {
                     ActionSheet(title: Text("Playz"), message: Text("\(playz.name ?? "Untitled")"), buttons: [
                         .default(Text("Share Playz"), action: {
-                            self.showShareSheet.toggle()
+                            self.sheetSelected = .showShareSheet
+                            self.sheetActive.toggle()
                         }),
-                        .default(Text("Edit Playz"), action: {print(self.playz.audioUrl)}),
-                        .destructive(Text("Delete Playz"), action: {print("delete")}),
+                        .default(Text("Edit Playz"), action: {
+                            self.sheetSelected = .editPlayz
+                            self.sheetActive.toggle()
+                        }),
+                        .destructive(Text("Delete Playz"), action: {
+                            print("delete")
+                        }),
                         .cancel()
                     ])
-                }.sheet(isPresented: $showShareSheet) {
-                    SwiftUIActivityViewController(audioURL: self.playz.audioUrl)
                 }
                 ZStack {
                     RoundedRectangle(cornerRadius: 13).fill(LinearGradient(gradient:  Gradient(colors: [Color("playButtonGradient1"), Color("playButtonGradient2")]), startPoint: .top, endPoint: .bottom))
@@ -68,7 +73,7 @@ struct PlayzView: View {
             
         }.onReceive(playbackPlayz.$playbackPlayz) {_ in
             self.checkForSimultaneouslyPlays()
-        }
+        }.sheet(isPresented: $sheetActive, content: sheetContent)
     }
     
     func togglePlayer() {
@@ -98,8 +103,24 @@ struct PlayzView: View {
     
     func stopPlayingPlayz() {
         if soundPlaying {
-         self.playzPlayer.stop(playz: self.playz)
+            self.playzPlayer.stop(playz: self.playz)
         }
     }
     
+}
+
+extension PlayzView {
+    enum Sheets {
+        case editPlayz, showShareSheet
+    }
+
+    @ViewBuilder func sheetContent() -> some View {
+        if sheetSelected == .editPlayz {
+            EditPlayzView(playz: self.playz)
+        } else if sheetSelected == .showShareSheet {
+            SwiftUIActivityViewController(audioURL: self.playz.audioUrl)
+        } else {
+            SwiftUIActivityViewController(audioURL: self.playz.audioUrl)
+        }
+    }
 }

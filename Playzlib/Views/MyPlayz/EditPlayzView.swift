@@ -10,12 +10,17 @@ import SwiftUI
 
 struct EditPlayzView: View {
     
-    //let playz: Playz?
+    let playz: Playz?
     
-    init(){
+    init(playz: Playz) {
+        self.playz = playz
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = UIColor.systemGray6
     }
+    
+    @Environment(\.managedObjectContext) var context
+    
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var playzName: String = ""
     
@@ -25,7 +30,14 @@ struct EditPlayzView: View {
         }) {
             Text("Save").fontWeight(.semibold).foregroundColor(Color("accentColor"))
         }
-        
+    }
+    
+    var cancelButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Text("Cancel").foregroundColor(Color("accentColor"))
+        }
     }
     
     var body: some View {
@@ -66,21 +78,32 @@ struct EditPlayzView: View {
                             }
                         }
                     }.listStyle(GroupedListStyle())
-                    .environment(\.horizontalSizeClass, .regular)
+                        .environment(\.horizontalSizeClass, .regular)
                 }
             }.navigationBarTitle(Text("Edit Playz"), displayMode: .inline)
-                .navigationBarItems(trailing: saveButton)
+                .navigationBarItems(leading: cancelButton, trailing: saveButton)
+        }.onAppear {
+            if let name = self.playz?.name {
+                self.playzName = name
+            }
         }
     }
     
     
     func savePlayz() {
-        
+        self.playz?.name = self.playzName
+        try? self.context.save()
+        do {
+            try self.context.save()
+        } catch let error as NSError {
+            print(error)
+        }
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct EditPlayzView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPlayzView()
+        EmptyView()
     }
 }

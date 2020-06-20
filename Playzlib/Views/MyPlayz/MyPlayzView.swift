@@ -20,6 +20,7 @@ struct MyPlayzView: View {
     ) var fetchedPlayz: FetchedResults<Playz>
     
     @State private var showSettings = false
+    @State private var editPlayz = false
     @State private var searchText = ""
     
     var body: some View {

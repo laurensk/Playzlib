@@ -27,12 +27,6 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             playzPlayer.play()
         } catch {
             soundPlaying.wrappedValue = false
-            
-            // debugging start
-            print("couldn't play.. sorry!")
-            print(playz.audioUrl)
-            // debugging end
-            
         }
     
     }
