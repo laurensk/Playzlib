@@ -15,12 +15,16 @@ struct PlayzView: View {
     @ObservedObject var playz: Playz
     var playzPlayer = PlayzAudioPlayer()
     
+    var deletePlayzUtils = DeletePlayz()
+    
     @State private var soundPlaying = false
     
     @State private var showMenuSheet = false
     
     @State private var sheetActive = false
     @State private var sheetSelected: Sheets = .showShareSheet
+    
+    @State private var deleteAlert = false
     
     var body: some View {
         
@@ -54,7 +58,7 @@ struct PlayzView: View {
                             self.sheetActive.toggle()
                         }),
                         .destructive(Text("Delete Playz"), action: {
-                            print("delete")
+                            self.deleteAlert.toggle()
                         }),
                         .cancel()
                     ])
@@ -74,6 +78,9 @@ struct PlayzView: View {
         }.onReceive(playbackPlayz.$playbackPlayz) {_ in
             self.checkForSimultaneouslyPlays()
         }.sheet(isPresented: $sheetActive, content: sheetContent)
+            .alert(isPresented: $deleteAlert) {
+                Alert(title: Text("Delete Playz"), message: Text("Are you sure you want to delete \"\(self.playz.name ?? "nil")\"?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Delete Playz"), action: deletePlayz))
+        }
     }
     
     func togglePlayer() {
@@ -111,13 +118,17 @@ struct PlayzView: View {
         }
     }
     
+    func deletePlayz() {
+        deletePlayzUtils.deletePlayz(playz: self.playz)
+    }
+    
 }
 
 extension PlayzView {
     enum Sheets {
         case editPlayz, showShareSheet
     }
-
+    
     @ViewBuilder func sheetContent() -> some View {
         if sheetSelected == .editPlayz {
             EditPlayzView(playz: self.playz)
