@@ -89,16 +89,20 @@ struct PlayzView: View {
     
     func checkForSimultaneouslyPlays() {
         
-        if !Settings.getSetting(setting: .AllowSimultaneouslyPlays) && self.playbackPlayz.playbackPlayz != self.playz {
+        if !Settings.getSetting(setting: .AllowSimultaneouslyPlays) && self.playbackPlayz.playbackPlayz != self.playz.uuid {
             stopPlayingPlayz()
         }
     }
     
     func playPlayz() {
         
-        self.playbackPlayz.playbackPlayz = playz
+        if let uuid = playz.uuid {
+            self.playbackPlayz.playbackPlayz = uuid
+            self.playzPlayer.playSound(playz: playz)
+        } else {
+            print("error")
+        }
         
-        self.playzPlayer.playSound(playz: playz)
     }
     
     func stopPlayingPlayz() {

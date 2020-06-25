@@ -13,7 +13,6 @@
 		0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */; };
 		0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E6BD42457328000F69140 /* CoreDataStack.swift */; };
 		0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */; };
-		0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F0D24547E9B00141ADF /* Playz.swift */; };
 		0D2C5F13245482D100141ADF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F12245482D100141ADF /* Settings.swift */; };
 		0D2C5F1A24549A1400141ADF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F1924549A1400141ADF /* SettingsView.swift */; };
 		0D54A171245CBBB4002CABD5 /* CreatePlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */; };
@@ -22,6 +21,7 @@
 		0D5CC75F245C88D5001AF019 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */; };
 		0D5CC761245C89ED001AF019 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC760245C89ED001AF019 /* ExtensionHelpers.swift */; };
 		0D5CC763245C8BCB001AF019 /* FileManagerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC762245C8BCB001AF019 /* FileManagerHelpers.swift */; };
+		0D5D4A1824A298AC007EC76C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5D4A1724A298AC007EC76C /* CloudKit.framework */; };
 		0D67ECB22453294D003D8F43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB12453294D003D8F43 /* HomeView.swift */; };
 		0D67ECB4245329B2003D8F43 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB3245329B2003D8F43 /* TabBarView.swift */; };
 		0D67ECB6245329F2003D8F43 /* MyPlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */; };
@@ -90,7 +90,6 @@
 		0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayzViewController.swift; sourceTree = "<group>"; };
 		0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAudioTrack.swift; sourceTree = "<group>"; };
 		0D0E6BD42457328000F69140 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		0D2C5F0D24547E9B00141ADF /* Playz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playz.swift; sourceTree = "<group>"; };
 		0D2C5F12245482D100141ADF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0D2C5F1924549A1400141ADF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayzView.swift; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		0D5CC760245C89ED001AF019 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		0D5CC762245C8BCB001AF019 /* FileManagerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelpers.swift; sourceTree = "<group>"; };
+		0D5D4A1724A298AC007EC76C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0D67ECB12453294D003D8F43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0D67ECB3245329B2003D8F43 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0D67ECB5245329F2003D8F43 /* MyPlayzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayzView.swift; sourceTree = "<group>"; };
@@ -139,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5D4A1824A298AC007EC76C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,11 +191,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0D5D4A1624A298AB007EC76C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D5D4A1724A298AC007EC76C /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0D67ECA9245328E6003D8F43 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
-				0D2C5F0D24547E9B00141ADF /* Playz.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 				0DDA6781245214650088B659 /* PlayzlibUITests */,
 				0D0E6BB82456E66200F69140 /* ShareExtension */,
 				0DDA675B245214620088B659 /* Products */,
+				0D5D4A1624A298AB007EC76C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -528,7 +537,6 @@
 				0DC40314245446BD00C58CB2 /* AudioPlayerHelpers.swift in Sources */,
 				0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */,
 				0D67ECBA24532F01003D8F43 /* PlayzView.swift in Sources */,
-				0D2C5F0E24547E9B00141ADF /* Playz.swift in Sources */,
 				0DBE2AD7249CC30A002497B4 /* DeletePlayz.swift in Sources */,
 				0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */,
 				0D9F51C7249A04B700779AEA /* EditPlayzView.swift in Sources */,
