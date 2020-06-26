@@ -20,17 +20,36 @@ public class DeletePlayz {
         context = delegate.persistentContainer.viewContext
     }
     
+    let errorHandling = ErrorHandling()
+    
     func deletePlayz(playz: Playz) {
-        deletePlayzAudio(playz: playz, completion: {
+        deletePlayzAudio(playz: playz, success: {
+            print("its gone")
             deletePlayzEntry(playz: playz)
         })
     }
     
-    func deletePlayzAudio(playz: Playz, completion: () -> Void) {
-        completion()
+    private func deletePlayzAudio(playz: Playz, success: () -> Void) {
+        let fileManager = FileManager.default
+        if let path = playz.audioUrl?.path {
+            if fileManager.fileExists(atPath: path) {
+                if let url = playz.audioUrl {
+                    do {
+                        try fileManager.removeItem(at: url)
+                        success()
+                    }
+                    catch {
+                        errorHandling.throwError(error: .deleteError, showError: true)
+                    }
+                }
+            } else {
+                success()
+            }
+        }
+        
     }
     
-    func deletePlayzEntry(playz: Playz) {
+    private func deletePlayzEntry(playz: Playz) {
         self.context.delete(playz)
     }
     

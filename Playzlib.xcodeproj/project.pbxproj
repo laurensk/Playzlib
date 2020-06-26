@@ -15,6 +15,7 @@
 		0D0E6BD92457358900F69140 /* Playzlib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6761245214620088B659 /* Playzlib.xcdatamodeld */; };
 		0D2C5F13245482D100141ADF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F12245482D100141ADF /* Settings.swift */; };
 		0D2C5F1A24549A1400141ADF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C5F1924549A1400141ADF /* SettingsView.swift */; };
+		0D2F6F9F24A68751007DCA60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA6766245214650088B659 /* Assets.xcassets */; };
 		0D54A171245CBBB4002CABD5 /* CreatePlayzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */; };
 		0D54A173245CC8CB002CABD5 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54A172245CC8CB002CABD5 /* ExtensionViewController.swift */; };
 		0D5CC75E245C87CE001AF019 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */; };
@@ -476,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2F6F9F24A68751007DCA60 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

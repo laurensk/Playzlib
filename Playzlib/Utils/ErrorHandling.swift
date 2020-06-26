@@ -12,11 +12,14 @@ import UIKit
 public enum PlayzlibError: String {
     
     // File system
-    case curruptedFileError = "curruptedFileError"
-    case savingError = "savingError"
+    case savingError = "This Playz cannot be saved. If you think that's our vault, please file a bug."
+    case deleteError = "An error occurred while deleting the Playz. If you think that's our vault, please file a bug."
+    
+    // Playback
+    case playbackError = "This Playz cannot be played. If you think that's our vault, please file a bug."
     
     // Unknown
-    case unknownError = "unknownError"
+    case unknownError = "An unknown error occurred. If you think that's our vault, please file a bug."
 }
 
 public class ErrorHandling {

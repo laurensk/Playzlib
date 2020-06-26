@@ -26,6 +26,8 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             soundPlaying.wrappedValue = true
             playzPlayer.play()
         } catch {
+            let errorHandling = ErrorHandling()
+            errorHandling.throwError(error: .playbackError, showError: true)
             soundPlaying.wrappedValue = false
         }
     

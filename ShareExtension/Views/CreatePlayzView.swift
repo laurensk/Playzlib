@@ -16,36 +16,44 @@ struct CreatePlayzView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                Image("createPlayzIcon").resizable().scaledToFit()
-                Text("Create your playz").font(.title)
-                Form {
-                    Section {
-                        List {
-                            VStack {
-                                TextField("Give your Playz a name", text: $playzName).multilineTextAlignment(.center)
-                            }
+            Form {
+                Section {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image("createPlayzIcon").resizable().scaledToFit().padding(.bottom, 4)
+                            Spacer()
+                        }
+                        Text("Edit Playz").font(.system(size: 25, design: .rounded)).fontWeight(.bold).foregroundColor(Color("accentColor"))
+                    }.padding()
+                    
+                }.frame(height: 200)
+                Section {
+                    List {
+                        VStack {
+                            TextField("Give your Playz a name", text: $playzName).multilineTextAlignment(.center)
                         }
                     }
-                    Section {
-                        List {
-                            VStack {
-                                HStack {
-                                    Spacer()
-                                    Button(action: {
-                                        self.createPlayz()
-                                    }) {
-                                        Text("Save Playz")
-                                    }
-                                    Spacer()
+                }
+                Section {
+                    List {
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    self.createPlayz()
+                                }) {
+                                    Text("Create Playz").foregroundColor(Color("accentColor"))
                                 }
+                                Spacer()
                             }
                         }
                     }
-                }.listStyle(GroupedListStyle())
+                }
+            }.listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
-            }
         }
+        
     }
     
     
@@ -55,21 +63,3 @@ struct CreatePlayzView: View {
         }
     }
 }
-
-
-//VStack {
-//    Text("Create Playz")
-//        .font(.title)
-//        .padding(.top, 70)
-//    TextField("Give your Playz a name", text: $playzName)
-//        .multilineTextAlignment(.center)
-//        .textFieldStyle(RoundedBorderTextFieldStyle())
-//        .padding()
-//    Button(action:{
-//        self.createPlayz()
-//    }) {
-//        Text("Save Playz")
-//    }
-//    .padding(.top)
-//    Spacer()
-//}

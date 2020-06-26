@@ -48,9 +48,18 @@ struct SettingsView: View {
                     }
                     Section(header: Text("ABOUT")) {
                         List {
-                            VStack {
-                                Text("This is Playzlib")
-                            }
+                            HStack {
+                                Text("Developer").fontWeight(.semibold)
+                                Text("Laurens K.")
+                            }.onTapGesture(perform: { print("developer") })
+                            HStack {
+                                Text("Twitter").fontWeight(.semibold)
+                                Text("@laurensk")
+                            }.onTapGesture(perform: { print("twitter") })
+                            HStack {
+                                Text("Contact").fontWeight(.semibold)
+                                Text("hello@laurensk.at")
+                            }.onTapGesture(perform: { print("contact") })
                         }
                     }
                 }.listStyle(GroupedListStyle())
