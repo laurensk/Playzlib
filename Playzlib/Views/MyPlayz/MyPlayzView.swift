@@ -40,7 +40,6 @@ struct MyPlayzView: View {
                 SettingsView()
         }.onAppear {
             self.setupUI()
-            //self.context.refreshAllObjects()
         }
     }
     

@@ -27,7 +27,7 @@ public class FileManagerHelpers {
             try CoreDataStack.store.context.save()
             ExtensionHelpers.extensionHelpers.dismissExtension(extensionContext)
         } catch {
-            ErrorHandling.errorHandling.savingError()
+            ErrorHandling.errorHandling.throwError(error: .savingError, showError: true)
             ExtensionHelpers.extensionHelpers.dismissExtension(extensionContext)
         }
         
@@ -53,7 +53,7 @@ public class FileManagerHelpers {
                 try fileManager.createDirectory(at: newURL, withIntermediateDirectories: true, attributes: nil)
             }
             catch{
-                ErrorHandling.errorHandling.savingError()
+                ErrorHandling.errorHandling.throwError(error: .savingError, showError: true)
                 ExtensionHelpers.extensionHelpers.dismissExtension(extensionContext)
             }
         }
@@ -83,7 +83,7 @@ public class FileManagerHelpers {
         let asset = AVURLAsset(url: originURL, options: nil)
         asset.writeAudioTrackToURL(destinationURL) { (success, error) -> () in
             if !success {
-                ErrorHandling.errorHandling.savingError()
+                ErrorHandling.errorHandling.throwError(error: .savingError, showError: true)
                 ExtensionHelpers.extensionHelpers.dismissExtension(extensionContext)
             }
         }
@@ -111,7 +111,7 @@ public class FileManagerHelpers {
         }
         catch {
             originURL.stopAccessingSecurityScopedResource()
-            ErrorHandling.errorHandling.savingError()
+            ErrorHandling.errorHandling.throwError(error: .savingError, showError: true)
             ExtensionHelpers.extensionHelpers.dismissExtension(extensionContext)
         }
         

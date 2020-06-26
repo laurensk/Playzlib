@@ -34,7 +34,7 @@
 		0DB1DBC42455FCEA00A2470E /* Playz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */; };
 		0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */; };
 		0DBE2AD7249CC30A002497B4 /* DeletePlayz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBE2AD6249CC30A002497B4 /* DeletePlayz.swift */; };
-		0DC40314245446BD00C58CB2 /* AudioPlayerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */; };
+		0DC40314245446BD00C58CB2 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC40313245446BD00C58CB2 /* AudioPlayer.swift */; };
 		0DCF110424990D52002BF0D9 /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF110324990D52002BF0D9 /* HowToView.swift */; };
 		0DDA675E245214620088B659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675D245214620088B659 /* AppDelegate.swift */; };
 		0DDA6760245214620088B659 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA675F245214620088B659 /* SceneDelegate.swift */; };
@@ -43,6 +43,8 @@
 		0DDA676D245214650088B659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA676B245214650088B659 /* LaunchScreen.storyboard */; };
 		0DDA6778245214650088B659 /* PlayzlibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6777245214650088B659 /* PlayzlibTests.swift */; };
 		0DDA6783245214650088B659 /* PlayzlibUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA6782245214650088B659 /* PlayzlibUITests.swift */; };
+		0DE7A8C024A6660900E49AD9 /* ErrorPresenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7A8BF24A6660900E49AD9 /* ErrorPresenterApp.swift */; };
+		0DE7A8C224A666BF00E49AD9 /* ErrorPresenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7A8C124A666BF00E49AD9 /* ErrorPresenterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,7 @@
 		0DB1DBC22455FCEA00A2470E /* Playz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0DB1DBC32455FCEA00A2470E /* Playz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0DBE2AD6249CC30A002497B4 /* DeletePlayz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlayz.swift; sourceTree = "<group>"; };
-		0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHelpers.swift; sourceTree = "<group>"; };
+		0DC40313245446BD00C58CB2 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		0DCF110324990D52002BF0D9 /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
 		0DDA675A245214620088B659 /* Playzlib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playzlib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA675D245214620088B659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,8 @@
 		0DDA677E245214650088B659 /* PlayzlibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayzlibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA6782245214650088B659 /* PlayzlibUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayzlibUITests.swift; sourceTree = "<group>"; };
 		0DDA6784245214650088B659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DE7A8BF24A6660900E49AD9 /* ErrorPresenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenterApp.swift; sourceTree = "<group>"; };
+		0DE7A8C124A666BF00E49AD9 /* ErrorPresenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,17 +175,14 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
-		0D2C5F0B24547E4500141ADF /* Helpers */ = {
+		0D2C5F0B24547E4500141ADF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
 				0D2C5F12245482D100141ADF /* Settings.swift */,
-				0DC40313245446BD00C58CB2 /* AudioPlayerHelpers.swift */,
-				0D734081245B23AC00E359CC /* SharePlayz.swift */,
 				0D5CC75D245C87CE001AF019 /* ErrorHandling.swift */,
-				0DBE2AD6249CC30A002497B4 /* DeletePlayz.swift */,
+				0DE7A8BF24A6660900E49AD9 /* ErrorPresenterApp.swift */,
 			);
-			path = Helpers;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		0D2C5F18245497FB00141ADF /* Settings */ = {
@@ -212,8 +213,8 @@
 		0D67ECAB245328F1003D8F43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */,
 				0DCF110224990D3E002BF0D9 /* HowTo */,
-				0D845E132454DAA500E23A76 /* HelperViews */,
 				0D2C5F18245497FB00141ADF /* Settings */,
 				0D67ECAD245328FF003D8F43 /* MyPlayz */,
 				0D67ECAC245328F7003D8F43 /* App */,
@@ -240,19 +241,11 @@
 			path = MyPlayz;
 			sourceTree = "<group>";
 		};
-		0D845E132454DAA500E23A76 /* HelperViews */ = {
-			isa = PBXGroup;
-			children = (
-				0D846AC02454C74E009B7A7E /* PlayzSearchBar.swift */,
-			);
-			path = HelperViews;
-			sourceTree = "<group>";
-		};
 		0D920929245A19A00089A5B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
 				0D54A172245CC8CB002CABD5 /* ExtensionViewController.swift */,
+				0D0E6BCA2456EBE500F69140 /* CreatePlayzViewController.swift */,
 				0D54A170245CBBB4002CABD5 /* CreatePlayzView.swift */,
 			);
 			path = Views;
@@ -265,8 +258,27 @@
 				0D0E6BCF245723F400F69140 /* WriteAudioTrack.swift */,
 				0D5CC762245C8BCB001AF019 /* FileManagerHelpers.swift */,
 				0D5CC760245C89ED001AF019 /* ExtensionHelpers.swift */,
+				0DE7A8C124A666BF00E49AD9 /* ErrorPresenterExtension.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		0DCE2D0724A66170001EE762 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				0DC40313245446BD00C58CB2 /* AudioPlayer.swift */,
+				0D734081245B23AC00E359CC /* SharePlayz.swift */,
+				0DBE2AD6249CC30A002497B4 /* DeletePlayz.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		0DCE2D0824A661B0001EE762 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E6B7024562D4800F69140 /* PlaybackPlayz.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0DCF110224990D3E002BF0D9 /* HowTo */ = {
@@ -308,7 +320,9 @@
 				0DDA675F245214620088B659 /* SceneDelegate.swift */,
 				0D67ECAB245328F1003D8F43 /* Views */,
 				0D67ECAA245328EA003D8F43 /* Core Data */,
-				0D2C5F0B24547E4500141ADF /* Helpers */,
+				0DCE2D0824A661B0001EE762 /* Models */,
+				0DCE2D0724A66170001EE762 /* Logic */,
+				0D2C5F0B24547E4500141ADF /* Utils */,
 				0DDA6766245214650088B659 /* Assets.xcassets */,
 				0DDA676B245214650088B659 /* LaunchScreen.storyboard */,
 				0D846ABE2454C6E1009B7A7E /* Info.plist */,
@@ -502,6 +516,7 @@
 				0D5CC75F245C88D5001AF019 /* ErrorHandling.swift in Sources */,
 				0D5CC763245C8BCB001AF019 /* FileManagerHelpers.swift in Sources */,
 				0D0E6BD52457328000F69140 /* CoreDataStack.swift in Sources */,
+				0DE7A8C224A666BF00E49AD9 /* ErrorPresenterExtension.swift in Sources */,
 				0D54A173245CC8CB002CABD5 /* ExtensionViewController.swift in Sources */,
 				0D0E6BCB2456EBE500F69140 /* CreatePlayzViewController.swift in Sources */,
 				0D0E6BD0245723F400F69140 /* WriteAudioTrack.swift in Sources */,
@@ -522,11 +537,12 @@
 				0DDA6760245214620088B659 /* SceneDelegate.swift in Sources */,
 				0D67ECB22453294D003D8F43 /* HomeView.swift in Sources */,
 				0D67ECB4245329B2003D8F43 /* TabBarView.swift in Sources */,
+				0DE7A8C024A6660900E49AD9 /* ErrorPresenterApp.swift in Sources */,
 				0DCF110424990D52002BF0D9 /* HowToView.swift in Sources */,
 				0D734082245B23AC00E359CC /* SharePlayz.swift in Sources */,
 				0DDA6763245214620088B659 /* Playzlib.xcdatamodeld in Sources */,
 				0D846AC12454C74E009B7A7E /* PlayzSearchBar.swift in Sources */,
-				0DC40314245446BD00C58CB2 /* AudioPlayerHelpers.swift in Sources */,
+				0DC40314245446BD00C58CB2 /* AudioPlayer.swift in Sources */,
 				0DB1DBC52455FCEA00A2470E /* Playz+CoreDataProperties.swift in Sources */,
 				0D67ECBA24532F01003D8F43 /* PlayzView.swift in Sources */,
 				0DBE2AD7249CC30A002497B4 /* DeletePlayz.swift in Sources */,

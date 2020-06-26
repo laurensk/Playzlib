@@ -44,7 +44,8 @@ struct CreatePlayzView: View {
                     }
                 }.listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
-            }}
+            }
+        }
     }
     
     

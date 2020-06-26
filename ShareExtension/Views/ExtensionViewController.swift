@@ -17,6 +17,8 @@ class ExtensionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray6
         
+        ErrorHandling.errorPresenter.setViewController(self)
+        
         setupNavBar()
         setupViews()
     }
