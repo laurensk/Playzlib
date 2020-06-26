@@ -21,9 +21,16 @@ public class DeletePlayz {
     }
     
     func deletePlayz(playz: Playz) {
-        
-        // TODO: callback function for audio deletion and core data entry deletion
-        
+        deletePlayzAudio(playz: playz, completion: {
+            deletePlayzEntry(playz: playz)
+        })
+    }
+    
+    func deletePlayzAudio(playz: Playz, completion: () -> Void) {
+        completion()
+    }
+    
+    func deletePlayzEntry(playz: Playz) {
         self.context.delete(playz)
     }
     
