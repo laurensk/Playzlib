@@ -17,6 +17,8 @@ struct PlayzView: View {
     
     var deletePlayzUtils = DeletePlayz()
     
+    var lastPlayed = LastPlayed()
+    
     @State private var soundPlaying = false
     
     @State private var showMenuSheet = false
@@ -37,7 +39,9 @@ struct PlayzView: View {
                     HStack() {
                         VStack(alignment: .leading) {
                             Text(playz.name ?? "Untitled").font(.headline).foregroundColor(Color("textColor")).padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
-                            Text("Last played: Today").font(.caption).foregroundColor(Color.gray)
+                            if (!Settings.getSetting(setting: .DisableLastPlayed)) {
+                             Text("Last played: \(lastPlayed.getLastPlayedString(playz: playz))").font(.caption).foregroundColor(Color.gray)
+                            }
                         }
                         Spacer()
                     }.padding(.leading)

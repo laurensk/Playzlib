@@ -22,5 +22,11 @@ public class ErrorPresenter {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
         self.vc.present(alert, animated: true, completion: nil)
     }
+    
+    public func presentCustomErrorAlert(error: String) {
+        let alert = UIAlertController(title: "Uups!", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.vc.present(alert, animated: true, completion: nil)
+    }
 }
 

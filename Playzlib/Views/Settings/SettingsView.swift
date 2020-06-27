@@ -14,6 +14,11 @@ struct SettingsToggle {
             Settings.setSetting(setting: .AllowSimultaneouslyPlays, value: allowSimultaneouslyPlays)
         }
     }
+    var disableLastPlayed: Bool = Settings.getSetting(setting: .DisableLastPlayed) {
+        didSet {
+            Settings.setSetting(setting: .DisableLastPlayed, value: disableLastPlayed)
+        }
+    }
 }
 
 struct SettingsView: View {
@@ -37,11 +42,22 @@ struct SettingsView: View {
                         }.padding()
                         
                     }.frame(height: 200)
-                    Section(header: Text("AUDIO SETTINGS")) {
+                    Section(header: Text("SETTINGS")) {
                         List {
                             VStack {
                                 Toggle(isOn: $settings.allowSimultaneouslyPlays) {
-                                    Text("Allow simultaneous plays")
+                                    HStack {
+                                        Image(systemName: "play.circle")
+                                        Text("Allow simultaneous plays")
+                                    }
+                                }
+                            }
+                            VStack {
+                                Toggle(isOn: $settings.disableLastPlayed) {
+                                    HStack {
+                                        Image(systemName: "calendar")
+                                        Text("Disable last played feature")
+                                    }
                                 }
                             }
                         }
@@ -49,23 +65,26 @@ struct SettingsView: View {
                     Section(header: Text("ABOUT")) {
                         List {
                             HStack {
-                                Text("Developer").fontWeight(.semibold)
-                                Text("Laurens K.")
-                            }.onTapGesture(perform: { print("developer") })
+                                Text("Developer")
+                                Spacer()
+                                Text("Laurens K.").foregroundColor(Color.gray)
+                            }.onTapGesture(perform: openWebsite)
                             HStack {
-                                Text("Twitter").fontWeight(.semibold)
-                                Text("@laurensk")
-                            }.onTapGesture(perform: { print("twitter") })
+                                Text("Twitter")
+                                Spacer()
+                                Text("@laurensk").foregroundColor(Color.gray)
+                            }.onTapGesture(perform: openTwitter)
                             HStack {
-                                Text("Contact").fontWeight(.semibold)
-                                Text("hello@laurensk.at")
-                            }.onTapGesture(perform: { print("contact") })
+                                Text("Contact")
+                                Spacer()
+                                Text("hello@laurensk.at").foregroundColor(Color.gray)
+                            }.onTapGesture(perform: openMail)
                         }
                     }
                 }.listStyle(GroupedListStyle())
-                .environment(\.horizontalSizeClass, .regular)
+                    .environment(\.horizontalSizeClass, .regular)
             }.navigationBarTitle("Settings")
-            .navigationViewStyle(StackNavigationViewStyle())
+                .navigationViewStyle(StackNavigationViewStyle())
         }.onAppear {
             self.setupUI()
         }
@@ -77,6 +96,18 @@ struct SettingsView: View {
         UITableView.appearance().separatorStyle = .singleLine
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .default
+    }
+    
+    func openWebsite() {
+        UIApplication.shared.open(URL(string: "https://www.laurensk.at")!)
+    }
+    
+    func openTwitter() {
+        UIApplication.shared.open(URL(string: "https://twitter.com/laurensk")!)
+    }
+    
+    func openMail() {
+        UIApplication.shared.open(URL(string: "mailto:hello@laurensk.at")!)
     }
     
 }

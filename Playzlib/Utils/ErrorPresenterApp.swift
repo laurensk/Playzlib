@@ -17,4 +17,11 @@ public class ErrorPresenter {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
         vc!.present(alert, animated: true, completion: nil)
     }
+    
+    public func presentCustomErrorAlert(error: String) {
+        let vc = UIApplication.shared.windows.first!.rootViewController
+        let alert = UIAlertController(title: "Uups!", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        vc!.present(alert, animated: true, completion: nil)
+    }
 }

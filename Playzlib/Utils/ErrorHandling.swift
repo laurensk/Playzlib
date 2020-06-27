@@ -35,4 +35,11 @@ public class ErrorHandling {
         }
     }
     
+    public func throwNSError(error: NSError, showError: Bool) {
+        print("[PLAYZLIB-ERROR] Error: \(error)")
+        if showError {
+            ErrorHandling.errorPresenter.presentCustomErrorAlert(error: error.localizedDescription)
+        }
+    }
+    
 }

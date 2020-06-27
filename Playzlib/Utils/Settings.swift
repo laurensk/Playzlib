@@ -10,6 +10,7 @@ import Foundation
 
 enum SettingProperties: String {
     case AllowSimultaneouslyPlays = "allowSimultaneouslyPlays"
+    case DisableLastPlayed = "disableLastPlayed"
 }
 
 public class Settings {
