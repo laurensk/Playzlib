@@ -13,7 +13,7 @@ import SwiftUI
 class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     var soundPlaying: Binding<Bool> = .constant(false)
-    var playzPlayer: AVAudioPlayer = AVAudioPlayer()
+    var playzPlayer: AVAudioPlayer! = nil
     
     override init() {
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
@@ -21,16 +21,16 @@ class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     func playSound(playz: Playz) {
         do {
-            playzPlayer = try AVAudioPlayer(contentsOf: URL(resolvingAliasFileAt: playz.audioUrl!)) // at this point i cannot read the icloud file. i have to use a local copy!
+            playzPlayer = try AVAudioPlayer(contentsOf: playz.audioUrl!, fileTypeHint: nil)
+            playzPlayer.prepareToPlay()
             playzPlayer.delegate = self
-            soundPlaying.wrappedValue = true
             playzPlayer.play()
+            soundPlaying.wrappedValue = true
         } catch {
             let errorHandling = ErrorHandling()
             errorHandling.throwError(error: .playbackError, showError: true)
             soundPlaying.wrappedValue = false
         }
-    
     }
     
     func stop(playz: Playz) {

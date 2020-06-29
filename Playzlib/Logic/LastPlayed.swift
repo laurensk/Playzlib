@@ -49,5 +49,15 @@ public class LastPlayed {
         }
     }
     
+    func setLastPlayedDateNew(playz: Playz, completion: () -> Void) {
+        playz.lastPlayed = Date()
+        do {
+            try context.save()
+        } catch let error as NSError {
+            errorHandling.throwNSError(error: error, showError: false)
+        }
+        completion()
+    }
+    
 }
 

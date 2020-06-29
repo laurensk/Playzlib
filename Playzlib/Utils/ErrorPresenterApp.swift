@@ -13,7 +13,7 @@ public class ErrorPresenter {
     
     public func presentErrorAlert(error: PlayzlibError) {
         let vc = UIApplication.shared.windows.first!.rootViewController
-        let alert = UIAlertController(title: "Uups!", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Uups!", message: "\(error.rawValue)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
         vc!.present(alert, animated: true, completion: nil)
     }

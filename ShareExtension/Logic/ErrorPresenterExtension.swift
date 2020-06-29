@@ -18,15 +18,19 @@ public class ErrorPresenter {
     }
     
     public func presentErrorAlert(error: PlayzlibError) {
-        let alert = UIAlertController(title: "Uups!", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Uups!", message: "\(error.rawValue)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        self.vc.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async(execute: {
+            self.vc.present(alert, animated: true, completion: nil)
+         })
     }
     
     public func presentCustomErrorAlert(error: String) {
         let alert = UIAlertController(title: "Uups!", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        self.vc.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async(execute: {
+           self.vc.present(alert, animated: true, completion: nil)
+        })
     }
 }
 

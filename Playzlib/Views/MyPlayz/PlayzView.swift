@@ -108,8 +108,18 @@ struct PlayzView: View {
     func playPlayz() {
         
         if let uuid = playz.uuid {
-            self.playbackPlayz.playbackPlayz = uuid
-            self.playzPlayer.playSound(playz: playz)
+            
+            // not working
+            self.lastPlayed.setLastPlayedDateNew(playz: playz, completion: {
+                self.playbackPlayz.playbackPlayz = uuid
+                self.playzPlayer.playSound(playz: playz)
+            })
+            
+            // working but why
+//            self.playbackPlayz.playbackPlayz = uuid
+//            self.playzPlayer.playSound(playz: playz)
+            
+            
         } else {
             print("error")
         }
