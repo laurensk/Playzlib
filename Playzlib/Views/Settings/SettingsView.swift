@@ -85,8 +85,9 @@ struct SettingsView: View {
                     .environment(\.horizontalSizeClass, .regular)
             }.navigationBarTitle("Settings")
                 .navigationViewStyle(StackNavigationViewStyle())
-        }.onAppear {
-            self.setupUI()
+        }.navigationViewStyle(StackNavigationViewStyle())
+            .onAppear {
+                self.setupUI()
         }
     }
     

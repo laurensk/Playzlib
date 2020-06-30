@@ -76,13 +76,14 @@ struct EditPlayzView: View {
                         }
                     }
                 }.listStyle(GroupedListStyle())
-                .environment(\.horizontalSizeClass, .regular)
+                    .environment(\.horizontalSizeClass, .regular)
             }.navigationBarTitle(Text("Edit Playz"), displayMode: .inline)
                 .navigationBarItems(leading: cancelButton, trailing: saveButton)
-        }.onAppear {
-            if let name = self.playz?.name {
-                self.playzName = name
-            }
+        }.navigationViewStyle(StackNavigationViewStyle())
+            .onAppear {
+                if let name = self.playz?.name {
+                    self.playzName = name
+                }
         }
     }
     

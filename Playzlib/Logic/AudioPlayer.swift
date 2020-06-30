@@ -15,7 +15,7 @@ import CoreData
 class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     var soundPlaying: Binding<Bool> = .constant(false)
-    var playzPlayer: AVAudioPlayer! = nil
+    var playzPlayer: AVAudioPlayer = AVAudioPlayer()
     
     override init() {
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])

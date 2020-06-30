@@ -24,7 +24,7 @@ struct CreatePlayzView: View {
                             Image("createPlayzIcon").resizable().scaledToFit().padding(.bottom, 4)
                             Spacer()
                         }
-                        Text("Edit Playz").font(.system(size: 25, design: .rounded)).fontWeight(.bold).foregroundColor(Color("accentColor"))
+                        Text("Create Playz").font(.system(size: 25, design: .rounded)).fontWeight(.bold).foregroundColor(Color("accentColor"))
                     }.padding()
                     
                 }.frame(height: 200)

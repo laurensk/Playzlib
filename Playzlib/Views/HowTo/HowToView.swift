@@ -12,10 +12,10 @@ struct HowToView: View {
     
     private var titles: [String] = ["Find a Sound", "Prepare the Sound", "Add the Sound to Playzlib", "Enjoy!"]
     private var texts: [String] = [
-        "Before you can start adding and enjoying sounds in Playzlib, you have to find and prepare it. Start by searching for a audio or video file you want to add to Playzlib. If you've got an audio file already, you can skip to step 3.",
-        "Since your sound may not be an audio only file and may be a video, you have to prepare it for Playzlib. You can do that using the screen-recording feature of iOS. Just record a video into your gallery and you're done.",
-        "After your sound is in your gallery or in the files app, you can select it, click on this share button and select \"Playzlib\" to add your sound. Find a good name and you're good to go.",
-        "You're done! After you start/restart the Playzlib app the next time, your newly created Playz waits to get played!"
+        "Before you can start adding and playing sounds in Playzlib, you have to find and prepare it. Start by searching for an audio or video file you want to add to Playzlib. If you've already got an audio file, you can skip step 1 and 2.",
+        "Since your sound may not be provided as a video/audio file at the moment, you have to prepare it for Playzlib. Do that by using the screen-recording feature of iOS. Just record a video/audio into your gallery and move on.",
+        "After you've saved your sound in your gallery or the files app, you can select it, click on this share button and select \"Playzlib\" to add your sound. Find a good name and you're good to go.",
+        "You're done! When you start/restart the Playzlib app the next time, your newly created Playz is available and waits to get played!"
     ]
     
     var body: some View {
@@ -26,10 +26,13 @@ struct HowToView: View {
                         self.generateHowTo(index: $0)
                     }
                 }.padding()
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 30)
                     .navigationBarTitle("Add Sounds")
                     .navigationViewStyle(StackNavigationViewStyle())
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func generateHowTo(index: Int) -> some View {
@@ -60,7 +63,8 @@ struct HowToView: View {
     
     func descText(text: String) -> some View {
         return HStack {
-            Text("\(text)").fixedSize(horizontal: false, vertical: true)
+            Text("\(text)").fixedSize(horizontal: false, vertical: true).padding(.leading, 5)
+            Spacer()
         }
     }
 }
