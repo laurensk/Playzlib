@@ -14,9 +14,9 @@ struct SettingsToggle {
             Settings.setSetting(setting: .AllowSimultaneouslyPlays, value: allowSimultaneouslyPlays)
         }
     }
-    var disableLastPlayed: Bool = Settings.getSetting(setting: .DisableLastPlayed) {
+    var disableCreationDate: Bool = Settings.getSetting(setting: .DisableCreationDate) {
         didSet {
-            Settings.setSetting(setting: .DisableLastPlayed, value: disableLastPlayed)
+            Settings.setSetting(setting: .DisableCreationDate, value: disableCreationDate)
         }
     }
 }
@@ -53,10 +53,10 @@ struct SettingsView: View {
                                 }
                             }
                             VStack {
-                                Toggle(isOn: $settings.disableLastPlayed) {
+                                Toggle(isOn: $settings.disableCreationDate) {
                                     HStack {
                                         Image(systemName: "calendar")
-                                        Text("Disable last played feature")
+                                        Text("Hide creation date in list")
                                     }
                                 }
                             }

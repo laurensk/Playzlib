@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-public class LastPlayed {
+public class CreationDate {
     
     let delegate: AppDelegate
     let context: NSManagedObjectContext
@@ -20,10 +20,8 @@ public class LastPlayed {
         context = delegate.persistentContainer.viewContext
     }
     
-    let errorHandling = ErrorHandling()
-    
-    func getLastPlayedString(playz: Playz) -> String {
-        if let date = playz.lastPlayed {
+    func getCreationDate(playz: Playz) -> String {
+        if let date = playz.creationDate {
             if Calendar.current.isDateInToday(date) {
                 return "Today"
             } else {
@@ -38,25 +36,6 @@ public class LastPlayed {
         } else {
             return "Never"
         }
-    }
-    
-    func setLastPlayedDate(playz: Playz) {
-        playz.lastPlayed = Date()
-        do {
-            try context.save()
-        } catch let error as NSError {
-            errorHandling.throwNSError(error: error, showError: false)
-        }
-    }
-    
-    func setLastPlayedDateNew(playz: Playz, completion: () -> Void) {
-        playz.lastPlayed = Date()
-        do {
-            try context.save()
-        } catch let error as NSError {
-            errorHandling.throwNSError(error: error, showError: false)
-        }
-        completion()
     }
     
 }

@@ -9,6 +9,8 @@
 import Foundation
 import AVFoundation
 import SwiftUI
+import UIKit
+import CoreData
 
 class PlayzAudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     

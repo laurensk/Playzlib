@@ -17,7 +17,7 @@ struct PlayzView: View {
     
     var deletePlayzUtils = DeletePlayz()
     
-    var lastPlayed = LastPlayed()
+    var creationDate = CreationDate()
     
     @State private var soundPlaying = false
     
@@ -39,8 +39,8 @@ struct PlayzView: View {
                     HStack() {
                         VStack(alignment: .leading) {
                             Text(playz.name ?? "Untitled").font(.headline).foregroundColor(Color("textColor")).padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
-                            if (!Settings.getSetting(setting: .DisableLastPlayed)) {
-                             Text("Last played: \(lastPlayed.getLastPlayedString(playz: playz))").font(.caption).foregroundColor(Color.gray)
+                            if (!Settings.getSetting(setting: .DisableCreationDate)) {
+                                Text("Created: \(creationDate.getCreationDate(playz: playz))").font(.caption).foregroundColor(Color.gray)
                             }
                         }
                         Spacer()
@@ -108,18 +108,8 @@ struct PlayzView: View {
     func playPlayz() {
         
         if let uuid = playz.uuid {
-            
-            // not working
-            self.lastPlayed.setLastPlayedDateNew(playz: playz, completion: {
-                self.playbackPlayz.playbackPlayz = uuid
-                self.playzPlayer.playSound(playz: playz)
-            })
-            
-            // working but why
-//            self.playbackPlayz.playbackPlayz = uuid
-//            self.playzPlayer.playSound(playz: playz)
-            
-            
+            self.playbackPlayz.playbackPlayz = uuid
+            self.playzPlayer.playSound(playz: playz)
         } else {
             print("error")
         }
