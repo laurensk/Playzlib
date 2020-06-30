@@ -29,13 +29,7 @@ struct HowToView: View {
                     .navigationBarTitle("Add Sounds")
                     .navigationViewStyle(StackNavigationViewStyle())
             }
-        }.onAppear {
-            self.setupUI()
         }
-    }
-    
-    func setupUI() {
-        // ui to come
     }
     
     func generateHowTo(index: Int) -> some View {
