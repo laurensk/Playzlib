@@ -19,7 +19,7 @@ struct TabBarView: View {
             HowToView()
                 .tabItem {
                     Image(systemName: "plus.circle").imageScale(.large)
-                    Text("How to")
+                    Text("Add Sounds")
             }
             SettingsView()
                 .tabItem {
