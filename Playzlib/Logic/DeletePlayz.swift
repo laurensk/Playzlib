@@ -24,7 +24,6 @@ public class DeletePlayz {
     
     func deletePlayz(playz: Playz) {
         deletePlayzAudio(playz: playz, success: {
-            print("its gone")
             deletePlayzEntry(playz: playz)
         })
     }
