@@ -17,11 +17,17 @@
   <sup>*More features to come.</sup>
 </p>
 
-## Main Features
-TODO
+Playzlib is the one-and-only soundboard app you need. It's easy to add, manage and share sounds and offers a completely ad-free experience.
 
-## Upcoming Features
-TODO
+The goal of Playzlib is to provide their users with a fully ads-free and transparent way to manage, play and share small audio files. In fact, we're not even using a single tracking or ad-provider for Playzlib and developed an open sharing system to allow users to export and share all sounds stored in the library.
+
+Adding a so-called "Playz" is very easy. Just get an audio or video file and import it to Playzlib and you're good to go.
+
+Playzlib is designed to let you add sounds from everywhere. Even streaming apps like YouTube or Vimeo are supported and the process of adding sounds to Playzlib is very easy and straight forward. 
+
+Click the "Add Sounds" button in Playzlib to get a more detailed description of how to add sounds to Playzlib.
+
+Since we're trying to offer our users full transparency over how data is stored and managed in the app, Playzlib is fully open-source and interested people can easily view every line of code on GitHub - just search for "Playzlib-App".
 
 Your favourite feature isn't available or planned yet?
 Feel free to contribute to Playzlib or create a new [issue](https://github.com/laurensk/Playzlib-App/issues/new/choose) so that I can keep track of new features for upcoming updates.
