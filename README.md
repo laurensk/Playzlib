@@ -13,10 +13,6 @@
   <img src="https://imgur.com/O4ycu22.png" height="700">
 </p>
 
-<p align="center">
-  <sup>*More features to come.</sup>
-</p>
-
 Playzlib is the one-and-only soundboard app you need. It's easy to add, manage and share sounds and offers a completely ad-free experience.
 
 The goal of Playzlib is to provide their users with a fully ads-free and transparent way to manage, play and share small audio files. In fact, we're not even using a single tracking or ad-provider for Playzlib and developed an open sharing system to allow users to export and share all sounds stored in the library.
