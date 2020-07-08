@@ -25,6 +25,8 @@ struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var settings = SettingsToggle()
     
     var body: some View {
@@ -64,26 +66,33 @@ struct SettingsView: View {
                     }
                     Section(header: Text("ABOUT")) {
                         List {
-                            HStack {
-                                Text("Developer")
-                                Spacer()
-                                Text("Laurens K.").foregroundColor(Color.gray)
-                            }.onTapGesture(perform: openWebsite)
-                            HStack {
-                                Text("Twitter")
-                                Spacer()
-                                Text("@laurensk").foregroundColor(Color.gray)
-                            }.onTapGesture(perform: openTwitter)
-                            HStack {
-                                Text("Contact")
-                                Spacer()
-                                Text("hello@laurensk.at").foregroundColor(Color.gray)
-                            }.onTapGesture(perform: openMail)
+                            Button(action: openWebsite) {
+                                HStack {
+                                    Text("Developer").foregroundColor(colorScheme == .dark ? Color.white : Color(UIColor.darkText))
+                                    Spacer()
+                                    Text("Laurens K.").foregroundColor(Color.gray)
+                                }
+                            }
+                            Button(action: openTwitter) {
+                                HStack {
+                                    Text("Twitter").foregroundColor(colorScheme == .dark ? Color.white : Color(UIColor.darkText))
+                                    Spacer()
+                                    Text("@laurensk").foregroundColor(Color.gray)
+                                }
+                            }
+                            Button(action: openMail) {
+                                HStack {
+                                    Text("Contact").foregroundColor(colorScheme == .dark ? Color.white : Color(UIColor.darkText))
+                                    Spacer()
+                                    Text("hello@laurensk.at").foregroundColor(Color.gray)
+                                }
+                            }
+                            
                         }
                     }
                 }.listStyle(GroupedListStyle())
                     .environment(\.horizontalSizeClass, .regular)
-            }.navigationBarTitle("Settings")
+            }.navigationBarTitle("Settings & More")
                 .navigationViewStyle(StackNavigationViewStyle())
         }.navigationViewStyle(StackNavigationViewStyle())
             .onAppear {
