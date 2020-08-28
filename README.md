@@ -33,9 +33,9 @@ Feel free to contribute to Playzlib or create a new [issue](https://github.com/l
 ### A word about iCloud-Sync
 Since this is an open-source project and should be runnable without further configuration or an Apple Developer Subscription after cloning it, I've not planned to implement iCloud synchronization any time soon.
 
-Feel free to discuss with me on [Twitter](https://twitter.com/LaurensKDev).
+Feel free to discuss with me on [Twitter](https://twitter.com/laurensk).
 
 ### macOS Catalyst-App
 As I mentioned, Playzlib will not get iCloud synchronization any time soon and therefore, a macOS-Version of Playzlib wouldn't be nice to use. Regardless of this small UX issue, I'll work on a macOS version of Playzlib when the first iOS build is released.
 
-Feel free to discuss with me on [Twitter](https://twitter.com/LaurensKDev).
+Feel free to discuss with me on [Twitter](https://twitter.com/laurensk).
